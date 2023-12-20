@@ -32,7 +32,6 @@ class BannersController extends Controller
     public function store(Request $request)
     {
         $newbuild = new Banner;
-        $newbuild->id = $request->id; 
         $newbuild->title = $request->title;
         $newbuild->path = $request->path;
         $newbuild->sortOrder = $request->sortOrder;
