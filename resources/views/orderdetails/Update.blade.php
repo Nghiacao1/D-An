@@ -2,7 +2,7 @@
 
 @section('content')
     <center><div class="page-header"><h4>Chi tiết hóa đơn</h4></div></center>
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-4 col-xs-offset-44">
             <form method="POST" action="{{route("orderdetail.update",['id' => $orderdetails->id])}}">
                 @method("PUT")
                 @csrf

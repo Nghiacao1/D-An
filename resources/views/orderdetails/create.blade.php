@@ -27,7 +27,7 @@
     @endif
     <?php //Form thêm mới ?>
     <p><a class="btn btn-primary" href="/orderdetails">Về chi tiết hóa đơn</a></p>
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-4 col-xs-offset-44">
         <center><h4>Thêm hóa đơn</h4></center>
         <form action="{{ route("orderdetail.create") }}" method="POST">
             <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
