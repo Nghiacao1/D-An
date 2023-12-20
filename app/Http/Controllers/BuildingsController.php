@@ -11,18 +11,17 @@ class BuildingsController extends Controller
 {
     public function index(BuildingsDataTable $dataTable, Request $request)
     {
-       
-        $buildings = DB::table('buildings')->select('*');
-        $buildings = $buildings->get();
+        $buildings = DB::table('buildings')->paginate(10);
 
         $pageName = 'Tên Trang - News';
-
-        return view('/buildings.index', compact('buildings', 'pageName'));
+        return view('/buildings.index', compact('buildings', 'pageName'),[
+            '/buildings' => $buildings
+        ]);
     }
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        $value = $request->session()->get('key');
-        $buildings = BuildingsController::select('id','name','hotelId','code');
+        $buildings = Building::where('id', '=', $id)->select('*')->first();
+        return view('/buildings/detail', compact('buildings'));
     } 
     public function create()
     {
@@ -31,8 +30,7 @@ class BuildingsController extends Controller
     }
     public function store(Request $request)
     {
-        $newbuild = new Building;
-        $newbuild->id = $request->id; 
+        $newbuild = new Building; 
         $newbuild->name = $request->name;
         $newbuild->hotelId = $request->hotelId;
         $newbuild->code = $request->code;

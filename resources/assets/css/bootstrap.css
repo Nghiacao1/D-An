@@ -1568,8 +1568,11 @@ pre code {
 .col-xs-offset-5 {
   margin-left: 41.66666667%;
 }
+.col-xs-offset-44 {
+  margin-left: 33.333333333%;
+}
 .col-xs-offset-4 {
-  margin-left: 33.33333333%;
+  margin-left: -3%;
 }
 .col-xs-offset-3 {
   margin-left: 25%;

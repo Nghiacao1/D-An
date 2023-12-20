@@ -1,5 +1,6 @@
 </div>
 </div>
+</div>
 <!-- /. ROW  -->
 <footer><p>Bản quyền Neotech</p></footer>
 </div>

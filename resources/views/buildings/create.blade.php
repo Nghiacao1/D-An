@@ -28,14 +28,10 @@
 
     <?php //Form thêm mới học sinh?>
     <p><a class="btn btn-primary" href="/buildings">Về danh sách</a></p>
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-4 col-xs-offset-44">
         <center><h4>Thêm tòa nhà</h4></center>
         <form action="{{ route("building.create") }}" method="POST">
             <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
-            <div class="form-group">
-                <label for="id">ID</label>
-                <input type="text" class="form-control" id="id" name="id" placeholder="ID" maxlength="15" required />
-            </div>
             <div class="form-group">
                 <label for="name">Tên tòa nhà</label>
                 <input type="text" class="form-control" id="name"  name="name" placeholder="Tên tòa nhà" maxlength="255" required />

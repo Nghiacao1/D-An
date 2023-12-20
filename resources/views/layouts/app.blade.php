@@ -111,7 +111,6 @@
                 </div>
         
         </div>
-    @stack('scripts')
 </body>
 </html>
 @extends('footer')

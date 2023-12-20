@@ -61,4 +61,6 @@ class Customer extends Authenticatable
         'product_type',
         'is_receive_email',
     ];
+    public $timestamps = false;
+
 }
