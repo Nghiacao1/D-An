@@ -29,5 +29,6 @@ class Category extends Authenticatable
         'color_tag',
         'locklist'
     ];
+   public  $table = "category";
     public $timestamps = false;
 }
