@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\OrderdetailsController;
+use App\Http\Controllers\CategorysController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +66,10 @@ Route::post('orderdetails/store', [OrderdetailsController::class,'store'])->name
 Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('orderdetail.update');
 Route::get('orderdetails/edit/{id}', [OrderdetailsController::class,'edit']);
 Route::DELETE('/orderdetails/delete/{id}', [OrderdetailsController::class,'destroy']);
+//category//
+Route::get('/category', [CategorysController::class, 'index']);
+Route::get('category/create', [CategorysController::class,'create']); 
+Route::post('category/store', [CategorysController::class,'store'])->name("category.create");
+Route::put('/category/update/{id}', [CategorysController::class,'update'])->name('category.update');
+Route::get('category/edit/{id}', [CategorysController::class,'edit']);
+Route::DELETE('/category/delete/{id}', [CategorysController::class,'destroy']);
