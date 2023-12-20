@@ -45,6 +45,7 @@ Route::post('buildings/store', [BuildingsController::class,'store'])->name("buil
 Route::put('/buildings/update/{id}', [BuildingsController::class,'update'])->name('building.update');
 Route::get('buildings/edit/{id}', [BuildingsController::class,'edit']);
 Route::DELETE('/buildings/delete/{id}', [BuildingsController::class,'destroy']);
+Route::get('/customers/{id}', [CustomersController::class,'show']);
 //customer//
 Route::get('/customers', [CustomersController::class, 'index']);
 Route::get('customers/create', [CustomersController::class,'create']); 
