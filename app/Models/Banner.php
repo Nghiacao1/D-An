@@ -27,4 +27,5 @@ class Banner extends Authenticatable
         'datas',
         'cateid'
     ];
+    public $timestamps = false;
 }
