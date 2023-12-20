@@ -37,19 +37,9 @@ Route::get('/customers', [customersController::class, 'index']);
 Route::get('/orderdetails', [OrderdetailsController::class,'index']);
 
 Route::get('/banners', [BannersController::class,'index']);
-//building//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
 Route::post('buildings/store', [BuildingsController::class,'store'])->name("building.create");
 Route::put('/buildings/update/{id}', [BuildingsController::class,'update'])->name('building.update');
 Route::get('buildings/edit/{id}', [BuildingsController::class,'edit']);
 Route::DELETE('/buildings/delete/{id}', [BuildingsController::class,'destroy']);
-Route::get('/buildings/{id}', [BuildingsController::class,'show']);
-//customer//
-Route::get('/customers', [CustomersController::class, 'index']);
-Route::get('customers/create', [CustomersController::class,'create']); 
-Route::post('customers/store', [CustomersController::class,'store'])->name("customer.create");
-Route::put('/customers/update/{id}', [CustomersController::class,'update'])->name('customer.update');
-Route::get('customers/edit/{id}', [CustomersController::class,'edit']);
-Route::DELETE('/customers/delete/{id}', [CustomersController::class,'destroy']);
-Route::get('/customers/{id}', [CustomersController::class,'show']);
