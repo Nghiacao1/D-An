@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\AgenciesController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\OrderdetailsController;
-use App\Http\Controllers\AgenciesControllers;
-use App\Http\Controllers\MacsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,10 +23,8 @@ Route::get('/', function () {
 Route::get('/home',function(){
     return view('Home');
 });
-Route::get('/login',function(){
-    return view('login');
-});
-Route::post('/login',function(){
+Route::get('/auth',[LoginController::class,'login']);
+Route::post('/auth/login',function(){
     if(Auth::check()){}
     return view('home');
 });
@@ -58,6 +53,7 @@ Route::post('customers/store', [CustomersController::class,'store'])->name("cust
 Route::put('/customers/update/{id}', [CustomersController::class,'update'])->name('customer.update');
 Route::get('customers/edit/{id}', [CustomersController::class,'edit']);
 Route::DELETE('/customers/delete/{id}', [CustomersController::class,'destroy']);
+Route::get('/customers/{id}', [CustomersController::class,'show']);
 //banner//
 Route::get('/banners', [BannersController::class, 'index']);
 Route::get('banners/create', [BannersController::class,'create']); 
@@ -72,19 +68,3 @@ Route::post('orderdetails/store', [OrderdetailsController::class,'store'])->name
 Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('orderdetail.update');
 Route::get('orderdetails/edit/{id}', [OrderdetailsController::class,'edit']);
 Route::DELETE('/orderdetails/delete/{id}', [OrderdetailsController::class,'destroy']);
-//agencies//
-
-Route::get('/agencies', [AgenciesController::class, 'index']);
-Route::get('agencies/create', [AgenciesController::class,'create']); 
-Route::post('agencies/store', [AgenciesController::class,'store'])->name("agencie.create");
-Route::put('/agencies/update/{id}', [AgenciesController::class,'update'])->name('agencie.update');
-Route::get('agencies/edit/{id}', [AgenciesController::class,'edit']);
-Route::DELETE('/agencies/delete/{id}', [AgenciesController::class,'destroy']);
-
-//macs//
-Route::get('/macs', [MacsController::class, 'index']);
-Route::get('macs/create', [MacsController::class,'create']); 
-Route::post('macs/store', [MacsController::class,'store'])->name("mac.create");
-Route::put('/macs/update/{id}', [MacsController::class,'update'])->name('mac.update');
-Route::get('macs/edit/{id}', [MacsController::class,'edit']);
-Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);

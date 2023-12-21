@@ -29,9 +29,9 @@ class CustomersController extends Controller
     }
     public function store(Request $request)
     {
+        $customerCode = request($request->code,'');
         $newcus = new Customer;
-        $newcus->id = $request->id; 
-        $newcus->code = $request->code;
+        $newcus->code = $customerCode;
         $newcus->fullname = $request->fullname;
         $newcus->email = $request->email;
         $newcus->password = $request->password;
@@ -42,36 +42,11 @@ class CustomersController extends Controller
         $newcus->country = $request->country;
         $newcus->district = $request->district;
         $newcus->city = $request->city;
-        $newcus->status = $request->status;
-        $newcus->created_date = $request->created_date;
         $newcus->avatar = $request->avatar;
-        $newcus->token = $request->token;
-        $newcus->point = $request->point;
-        $newcus->webcloud_enable = $request->webcloud_enable;
-        $newcus->security_key = $request->security_key;
-        $newcus->fcm = $request->fcm;
-        $newcus->social_id = $request->social_id;
-        $newcus->last_login = $request->last_login;
-        $newcus->access_token = $request->access_token;
-        $newcus->refresh_token = $request->refresh_token;
-        $newcus->open_id = $request->open_id;
-        $newcus->scope = $request->scope;
-        $newcus->expires_in = $request->expires_in;
-        $newcus->identification_number = $request->identification_number;
-        $newcus->identification_img_1 = $request->identification_img_1;
-        $newcus->identification_img_2 = $request->identification_img_2;
         $newcus->balance = $request->balance;
-        $newcus->receiveFcm = $request->receiveFcm;
         $newcus->roles = $request->roles;
-        $newcus->emailVerify = $request->emailVerify;
-        $newcus->mobileVerify = $request->mobileVerify;
-        $newcus->remark = $request->remark;
-        $newcus->is_deleted = $request->is_deleted;
-        $newcus->commission = $request->commission;
-        $newcus->parent = $request->parent;
         $newcus->CCCD = $request->CCCD;
         $newcus->product_type = $request->product_type;
-        $newcus->is_receive_email = $request->is_receive_email;
 
         $newcus->save();
         if($newcus instanceof Customer) {
@@ -90,49 +65,22 @@ class CustomersController extends Controller
     public function update(Request $request, $id)
     {
         $customers = Customer::find($id);
-        $customers->id = $request->id; 
        $customers->code = $request->code;
        $customers->fullname = $request->fullname;
        $customers->email = $request->email;
        $customers->password = $request->password;
        $customers->username = $request->username;
        $customers->neolock_username = $request->neolock_username;
-       $customers->phone->$request->phone;
+       $customers->phone = $request->phone;
        $customers->address = $request->address;
        $customers->country = $request->country;
        $customers->district = $request->district;
        $customers->city = $request->city;
-       $customers->status = $request->status;
-       $customers->created_date = $request->created_date;
        $customers->avatar = $request->avatar;
-       $customers->token = $request->token;
-       $customers->point = $request->point;
-       $customers->webcloud_enable = $request->webcloud_enable;
-       $customers->security_key = $request->security_key;
-       $customers->fcm = $request->fcm;
-       $customers->social_id = $request->social_id;
-       $customers->last_login = $request->last_login;
-       $customers->access_token = $request->access_token;
-       $customers->refresh_token = $request->refresh_token;
-       $customers->open_id = $request->open_id;
-       $customers->scope = $request->scope;
-       $customers->expires_in = $request->expires_in;
-       $customers->identification_number = $request->identification_number;
-       $customers->identification_img_1 = $request->identification_img_1;
-       $customers->identification_img_2 = $request->identification_img_2;
        $customers->balance = $request->balance;
-       $customers->receiveFcm = $request->receiveFcm;
        $customers->roles = $request->roles;
-       $customers->emailVerify = $request->emailVerify;
-       $customers->mobileVerify = $request->mobileVerify;
-       $customers->remark = $request->remark;
-       $customers->is_deleted = $request->is_deleted;
-       $customers->commission = $request->commission;
-       $customers->parent = $request->parent;
        $customers->CCCD = $request->CCCD;
        $customers->product_type = $request->product_type;
-       $customers->is_receive_email = $request->is_receive_email;
-
         $customers->save();
         if($customers instanceof Customer) {
             toastr()->success('Data update success');

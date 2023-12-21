@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header"><h4>Quản lý Toà Nhà</h4></div>
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-4 col-xs-offset-44">
             <form method="POST" action="{{route("building.update",['id' => $buildings->id])}}">
                 @method("PUT")
                 @csrf
