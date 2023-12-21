@@ -31,12 +31,7 @@ Route::post('/auth/login',function(){
     return view('home');
 });
 
-
-Route::get('/customers', [customersController::class, 'index']);
-
-Route::get('/orderdetails', [OrderdetailsController::class,'index']);
-
-Route::get('/banners', [BannersController::class,'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //buildings//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
@@ -70,9 +65,20 @@ Route::DELETE('/orderdetails/delete/{id}', [OrderdetailsController::class,'destr
 Route::get('/category', [CategorysController::class, 'index']);
 Route::get('category/create', [CategorysController::class,'create']); 
 Route::post('category/store', [CategorysController::class,'store'])->name("category.create");
-Route::put('/category/pdate/{id}', [CategorysController::class,'update'])->name('category.update');
+Route::put('/category/update/{id}', [CategorysController::class,'update'])->name('category.update');
 Route::get('category/edit/{id}', [CategorysController::class,'edit']);
 Route::DELETE('/category/delete/{id}', [CategorysController::class,'destroy']);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//agencies//
+Route::get('/agencies', [AgenciesController::class, 'index']);
+Route::get('agencies/create', [AgenciesController::class,'create']); 
+Route::post('agencies/store', [AgenciesController::class,'store'])->name("agencies.create");
+Route::put('/agencies/update/{id}', [AgenciesController::class,'update'])->name('agencies.update');
+Route::get('agencies/edit/{id}', [AgenciesController::class,'edit']);
+Route::DELETE('/agencies/delete/{id}', [AgenciesController::class,'destroy']);
+//Mac//
+Route::get('/macs', [MacsController::class, 'index']);
+Route::get('macs/create', [MacsController::class,'create']); 
+Route::post('macs/store', [MacsController::class,'store'])->name("mac.create");
+Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.update');
+Route::get('macs/edit/{id}', [MacsController::class,'edit']);
+Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
