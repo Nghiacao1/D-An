@@ -6,21 +6,52 @@
         <div class="card-header"><h2> Detail Customer: {{$customers->fullname}} </h2></div>
         <div class="panel-body">
             <div id="buildings-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="customers-table"></label></div>
-            <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/customers/create">Thêm</a></div>
-            <p></p>
-            <div class="table-responsive">
-                <div class="box_oldproduct box_oldproductV2"  style="display: flex">   
+            <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/customers">Về danh sách</a></p>
+                <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     
-                    <img width="100" height="100" alt="hinhanh" src="{{ Avatar::create($customers->fullname)->toBase64() }}">
+                    <img width="150" height="150" alt="hinhanh" src="{{ Avatar::create($customers->fullname)->toBase64() }}">
                     
-                    <div class="col-sm">
-                        <div>Code: {{$customers->code}}</div>
-                        <div>Email: {{$customers->email}}</div>
-                        <div>Password: {{ $customers->password }}</div>
-                    </div>
-                    <div class="col-sm" >
-                        <div style="display: flex"><label>Country: {{$customers->country}}</label></div>
-                        <div style="display: flex"><label>City: {{$customers->city}}</label></div>
+                    <ul class="col-sm-22">
+                        <div class="container-1">
+                            <div class="row">
+                              <label class="col">User Name:</label>
+                              <div class="col">{{$customers->username}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">Neolock Username:</label>
+                              <div class="col">{{$customers->neolock_username}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">Email:</label>
+                              <div class="col">{{$customers->email}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">Phone Number:</label>
+                              <div class="col">{{$customers->phone}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">CCCD:</label>
+                              <div class="col">{{$customers->CCCD}}</div>
+                              <div class="w-100"></div>
+                              <label class="col"></label>
+                              <div class="col"></div
+                          </div>
+                        </div>
+                    </ul>
+                    <ul class="col-sm-22">
+                        <div class="container-1">
+                            <div class="row">
+                              <label class="col">Address:</label>
+                              <div class="col">{{$customers->address}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">Country:</label>
+                              <div class="col">{{$customers->country}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">City:</label>
+                              <div class="col">{{$customers->city}}</div>
+                              <div class="w-100"></div>
+                              <label class="col">District:</label>
+                              <div class="col">{{$customers->district}}</div>
+                          </div>
+                        </div>
+                    </ul>
+
                 </div>
 
 @endsection

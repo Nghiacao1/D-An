@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-header"><h4>Quản lý sản phẩm</h4></div>
         <div class="col-xs-4 col-xs-offset-44">
-            <form method="POST" action="{{route("category.update",['id' => $categorys->id])}}">
+            <form method="POST" action="{{route("category.update",['id'=> $categorys->id])}}">
                 @method("PUT")
                 @csrf
                 {{-- {{Form::open("route" => "route("category.update",$category->id)",'method' => 'PUT')}} --}}
@@ -30,27 +30,27 @@
 
                 <div class="form-group">
                     <label for="created_date">Created date</label><br>
-                    <input type="text" class="form-control" name="created_date" value="{{ $banners->created_date }}">
+                    <input type="text" class="form-control" name="created_date" value="{{ $categorys->created_date }}">
                 </div>
 
                 <div class="form-group">
                     <label for="modified">Modified</label><br>
-                    <input type="text" class="form-control" name="modified" value="{{ $banners->modified }}">
+                    <input type="text" class="form-control" name="modified" value="{{ $categorys->modified }}">
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status</label><br>
-                    <input type="text" class="form-control" name="status" value="{{ $banners->status }}">
+                    <input type="text" class="form-control" name="status" value="{{ $categorys->status }}">
                 </div>
 
                 <div class="form-group">
                     <label for="color_tag">Color tag</label><br>
-                    <input type="text" class="form-control" name="color_tag" value="{{ $banners->color_tag }}">
+                    <input type="text" class="form-control" name="color_tag" value="{{ $categorys->color_tag }}">
                 </div>
 
                 <div class="form-group">
                     <label for="locklist">Locklist</label><br>
-                    <input type="text" class="form-control" name="locklist" value="{{ $banners->locklist }}">
+                    <input type="text" class="form-control" name="locklist" value="{{ $categorys->locklist }}">
                 </div>
 
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>

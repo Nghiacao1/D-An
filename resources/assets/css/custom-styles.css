@@ -429,5 +429,9 @@ padding-top: 14px;
 font-size: 19px;
 }
 }
-
+@media(max-width:140px){
+.parameter__list .left{
+    width: 140px;
+    }
+}
 

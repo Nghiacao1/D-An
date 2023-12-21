@@ -51,9 +51,9 @@ class CategorysController extends Controller
     }
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $categorys = Category::findOrFail($id);
         $pageName = 'Category - Update';
-        return view('category.Update', compact('category', 'pageName'));
+        return view('category.Update', compact('categorys', 'pageName'));
     }
     public function update(Request $request, $id)
     {
