@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Code</label><br>
+                    <label for="price">price</label><br>
                     <input type="text" class="form-control" name="price" value="{{ $orderdetails->price }}">
                 </div>
 
