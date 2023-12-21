@@ -8,6 +8,8 @@ use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\OrderdetailsController;
 use App\Http\Controllers\CategorysController;
+use App\Http\Controllers\MacsController;
+use App\Http\Controllers\AgenciesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,7 @@ Route::post('/auth/login',function(){
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 //buildings//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
