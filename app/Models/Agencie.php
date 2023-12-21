@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Orderdetail extends Authenticatable
+class Agencie extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,16 +18,10 @@ class Orderdetail extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
-        'orderId',
-        'code',
-        'shopId',
-        'status',
-        'createdDate',
-        'quantity',
-        'price',
-        'description',
-        'macAddress'
+        'name',
+        'email',
+        'cccd',
+        'address',
     ];
     public $timestamps = false;
 }
