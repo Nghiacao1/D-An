@@ -38,10 +38,15 @@ body {
     border:1px solid #f3f3f3;
 }
 
-h1, .h1, h2, .h2, h3, .h3 {
+h1, .h1, h2, .h2 {
 margin-top: -5px;
 margin-left: -5px;
 margin-bottom: -5px;
+}
+h3, .h3{
+    margin-top: 0px;
+    margin-left: -5px;
+    margin-bottom: -5px;
 }
 h2 {
     color: #000;

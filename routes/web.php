@@ -34,7 +34,7 @@ Route::post('/auth/login',function(){
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+Auth::routes(); 
 //buildings//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
