@@ -62,12 +62,11 @@ Route::get('/banners/{id}', [BannersController::class,'show']);
 //orderdetail//
 Route::get('/orderdetails', [OrderdetailsController::class, 'index']);
 Route::get('orderdetails/create', [OrderdetailsController::class,'create'])->name('orderdetail.create'); 
-Route::post('orderdetails/store', [OrderdetailsController::class,'store'])->name("orderdetail.store");
+Route::post('orderdetails/store', [OrderdetailsController::class,'store'])->name("order.store");
 Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('orderdetail.update');
 Route::get('orderdetails/edit/{id}', [OrderdetailsController::class,'edit']);
 Route::DELETE('/orderdetails/delete/{id}', [OrderdetailsController::class,'destroy']);
-Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('category.update');
-
+Route::get('/orderdetails/{id}', [OrderdetailsController::class,'show']);
 //category//
 Route::get('/category', [CategorysController::class, 'index']);
 Route::get('category/create', [CategorysController::class,'create']); 

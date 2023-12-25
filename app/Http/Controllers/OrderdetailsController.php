@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\OrderdetailsDataTable;
-use illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Models\Orderdetail;
 use Illuminate\Support\Facades\DB;
 class OrderdetailsController extends Controller
@@ -14,13 +14,12 @@ class OrderdetailsController extends Controller
         $orderdetails = DB::table('orderdetails')->paginate(10);
 
         $pageName = 'Tên Trang - News';
-        return view('/orderdetails.index', compact('orderdetails', 'pageName'),[
-            '/orderdetails' => $orderdetails
-        ]);
+        return view('/orderdetails.index', compact('orderdetails', 'pageName') );
     }
     public function show(Request $request, $id)
     {
-        
+        $orderdetails = Orderdetail::where('id', '=', $id)->select('*')->first();
+        return view('/orderdetails/detail', compact('orderdetails'));
     } 
     public function create()
     {

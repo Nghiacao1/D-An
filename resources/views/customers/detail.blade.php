@@ -2,15 +2,9 @@
 @section('content')
 <div class="container">
     <div class="card">
-<<<<<<< HEAD
-        <div class="card-header"><h2> Detail customers: {{$customers->fullname}} </h2></div>
-        <div class="panel-body-1">
-            <div id="customers-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="customers-table"></label></div>
-=======
         <div class="card-header"><h2> Detail Customer: {{$customers->fullname}} </h2></div>
         <div class="panel-body-1">
             <div id="buildings-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="customers-table"></label></div>
->>>>>>> 0fec52a9481bc756fd88e5870b6bf44e8a29b55b
             <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/customers">Về danh sách</a></p>
                 <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     
