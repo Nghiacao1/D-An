@@ -6,16 +6,15 @@ use App\DataTables\CustomersDataTable;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 class CustomersController extends Controller
 {
     public function index(customersDataTable $dataTable, Request $request)
     {
         $customers = DB::table('customers')->paginate(10);
+        $pageName = 'Tên Trang - News'; 
 
-        $pageName = 'Tên Trang - News';
-        return view('/customers.index', compact('customers', 'pageName'),[
-            '/customers' => $customers
-        ]);
+        return view('customers.index', compact('customers', 'pageName'));
     }
     public function show($id)
     {
