@@ -42,6 +42,7 @@ Route::post('buildings/store', [BuildingsController::class,'store'])->name("buil
 Route::put('/buildings/update/{id}', [BuildingsController::class,'update'])->name('building.update');
 Route::get('buildings/edit/{id}', [BuildingsController::class,'edit']);
 Route::DELETE('/buildings/delete/{id}', [BuildingsController::class,'destroy']);
+Route::get('/buildings/{id}', [BuildingsController::class,'show']);
 //customer//
 Route::get('/customers', [CustomersController::class, 'index']);
 Route::get('customers/create', [CustomersController::class,'create']); 
@@ -57,6 +58,7 @@ Route::post('banners/store', [BannersController::class,'store'])->name("banner.c
 Route::put('/banners/update/{id}', [BannersController::class,'update'])->name('banner.update');
 Route::get('banners/edit/{id}', [BannersController::class,'edit']);
 Route::DELETE('/banners/delete/{id}', [BannersController::class,'destroy']);
+Route::get('/banners/{id}', [BannersController::class,'show']);
 //orderdetail//
 Route::get('/orderdetails', [OrderdetailsController::class, 'index']);
 Route::get('orderdetails/create', [OrderdetailsController::class,'create']); 
@@ -64,6 +66,8 @@ Route::post('orderdetails/store', [OrderdetailsController::class,'store'])->name
 Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('orderdetail.update');
 Route::get('orderdetails/edit/{id}', [OrderdetailsController::class,'edit']);
 Route::DELETE('/orderdetails/delete/{id}', [OrderdetailsController::class,'destroy']);
+Route::put('/orderdetails/update/{id}', [OrderdetailsController::class,'update'])->name('category.update');
+
 //category//
 Route::get('/category', [CategorysController::class, 'index']);
 Route::get('category/create', [CategorysController::class,'create']); 
@@ -71,6 +75,7 @@ Route::post('category/store', [CategorysController::class,'store'])->name("categ
 Route::put('/category/update/{id}', [CategorysController::class,'update'])->name('category.update');
 Route::get('category/edit/{id}', [CategorysController::class,'edit']);
 Route::DELETE('/category/delete/{id}', [CategorysController::class,'destroy']);
+Route::get('/category/{id}', [CategorysController::class,'show']);
 //agencies//
 Route::get('/agencies', [AgenciesController::class, 'index']);
 Route::get('agencies/create', [AgenciesController::class,'create']); 
@@ -78,6 +83,7 @@ Route::post('agencies/store', [AgenciesController::class,'store'])->name("agenci
 Route::put('/agencies/update/{id}', [AgenciesController::class,'update'])->name('agencies.update');
 Route::get('agencies/edit/{id}', [AgenciesController::class,'edit']);
 Route::DELETE('/agencies/delete/{id}', [AgenciesController::class,'destroy']);
+Route::get('/agencies/{id}', [AgenciesController::class,'show']);
 //Mac//
 Route::get('/macs', [MacsController::class, 'index']);
 Route::get('macs/create', [MacsController::class,'create']); 
@@ -85,3 +91,4 @@ Route::post('macs/store', [MacsController::class,'store'])->name("mac.create");
 Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.update');
 Route::get('macs/edit/{id}', [MacsController::class,'edit']);
 Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
+Route::get('/macs/{id}', [MacsController::class,'show']);

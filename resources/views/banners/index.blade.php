@@ -27,7 +27,7 @@
                         @foreach($banners as $row)
                         <tr>
                             <td>{{$row->id}}</td>
-                            <td>{{$row->title}}</td>
+                            <td><a href="/banners/{{$row->id}}">{{$row->title}}</a></td>
                             <td>{{$row->path}}</td>
                             <td>{{$row->sortOrder}}</td>
                             <td>{{$row->status}}</td>

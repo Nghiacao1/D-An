@@ -14,7 +14,7 @@
             
                             <tr>
                                 <th>id</th>
-                                <th>Name</th>
+                                <th>name</th>
                                 <th>Email</th>
                                 <th>Cccd</th>
                                 <th>Address	</th>
@@ -24,7 +24,7 @@
                         @foreach($agencies as $row)
                         <tr>
                             <td>{{$row->id}}</td>
-                            <td>{{$row->name}}</td>
+                            <td><a href="/agencies/{{$row->id}}">{{$row->name}}</a></td>
                             <td>{{$row->email}}</td>
                             <td>{{$row->cccd}}</td>
                             <td>{{$row->address}}</td>

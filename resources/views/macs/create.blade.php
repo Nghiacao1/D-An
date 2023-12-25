@@ -57,6 +57,10 @@
                 <input type="text" class="form-control" id="saleMan"  name="saleMan" placeholder="saleMane" maxlength="200" required />
             </div>
             <div class="form-group">
+                <label for="name">warrantyDate</label>
+                <input type="text" class="form-control" id="warrantyDate"  name="warrantyDate" placeholder="warrantyDate" maxlength="350" required />
+            </div>
+            <div class="form-group">
                 <label for="name">provider</label>
                 <input type="text" class="form-control" id="provider"  name="provider" placeholder="provider" maxlength="350" required />
             </div>

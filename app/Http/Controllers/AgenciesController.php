@@ -20,7 +20,7 @@ class AgenciesController extends Controller
     }
     public function show($id)
     {
-        $newage = Agencie::where('id', '=', $id)->select('*')->first();
+        $agencies = Agencie::where('id', '=', $id)->select('*')->first();
         return view('/agencies/detail', compact('agencies'));
     } 
     public function create()

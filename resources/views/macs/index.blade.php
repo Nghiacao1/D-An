@@ -20,6 +20,7 @@
                                 <th>purchaseDate</th>
                                 <th>sellDate</th>
                                 <th>saleMan</th>
+                                <th>warrantyDate</th>
                                 <th>provider</th>
                                 <th>updatedDate</th>
                                 <th>lockName</th>
@@ -33,13 +34,13 @@
                         @foreach($macs as $row)
                         <tr>
                             <td>{{$row->id}}</td>
-                            <td>{{$row->fullname}}</td>
+                            <td><a href="/macs/{{$row->id}}">{{$row->fullname}}</a></td>
                             <td>{{$row->email}}</td>
                             <td>{{$row->address}}</td>
-                            <td>{{$row->status}}</td>
                             <td>{{$row->purchaseDate}}</td>
                             <td>{{$row->sellDate}}</td>
                             <td>{{$row->saleMan}}</td>
+                            <td>{{$row->warrantyDate}}</td>
                             <td>{{$row->provider}}</td>
                             <td>{{$row->updatedDate}}</td>
                             <td>{{$row->buyerName}}</td>

@@ -29,7 +29,7 @@
                         @foreach($orderdetails as $row)
                         <tr>
                             <td>{{$row->id}}</td>
-                            <td>{{$row->orderId}}</td>
+                            <td><a href="/orderdetails/{{$row->id}}">{{$row->orderId}}</a></td>
                             <td>{{$row->code}}</td>
                             <td>{{$row->shopId}}</td>
                             <td>{{$row->status}}</td>

@@ -21,8 +21,8 @@ class BannersController extends Controller
     }
     public function show(Request $request, $id)
     {
-        $value = $request->session()->get('key');
-        $banners = BannersController::select('id','title','path','sortOrder','status','type','datas','cateid');
+        $banners = Banner::where('id', '=', $id)->select('*')->first();
+        return view('/banners.detail', compact('banners'));
     } 
     public function create()
     {

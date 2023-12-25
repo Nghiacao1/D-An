@@ -38,6 +38,7 @@ class MacsController extends Controller
         $newmac->purchaseDate = $request->purchaseDate;
         $newmac->sellDate = $request->sellDate;
         $newmac->saleMan = $request->saleMan;
+        $newmac->warrantyDate = $request->warrantyDate;
         $newmac->provider = $request->provider;
         $newmac->updatedDate = $request->updatedDate;
         $newmac->lockName = $request->lockName;
@@ -69,6 +70,7 @@ class MacsController extends Controller
         $macs->purchaseDate = $request->purchaseDate;
         $macs->sellDate = $request->sellDate;
         $macs->saleMan = $request->saleMan;
+        $macs->warrantyDate = $request->warrantyDate;
         $macs->provider = $request->provider;
         $macs->updatedDate = $request->updatedDate;
         $macs->lockName = $request->lockName;

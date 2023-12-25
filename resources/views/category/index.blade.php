@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header"><h2> Manage Categoys </h2></div>
+            <div class="card-header"><h2> Manage Category </h2></div>
             <div class="panel-body">
                 <div id="categoys-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="categoys-table"></label></div>
                 <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/category/create">Thêm</a></div>
@@ -28,9 +28,9 @@
                     <tbody>
                         @foreach($category as $row)
                         <tr>
-                            <td>{{$row->id}}</td>
+                        <td>{{$row->id}}</td>
                             <td>{{$row->customer_id}}</td>
-                            <td>{{$row->title}}</td>
+                            <td><a href="/category/{{$row->id}}">{{$row->title}}</a></td>
                             <td>{{$row->image}}</td>
                             <td>{{$row->description}}</td>
                             <td>{{$row->created_date}}</td>
@@ -39,7 +39,7 @@
                             <td>{{$row->color_tag}}</td>
                             <td>{{$row->locklist}}</td>
                             <td><a class="btn btn-primary" href="category/edit/{{$row->id}}">Edit</a>  
-                                <form method="POST" style="display: inline-block" action="category/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
+                                <form method="POST" style="display:inline-block" action="categorys/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
                                     @method('DELETE')
                                     @csrf
                                         <button class="btn btn-primary" type="submit">Delete</button>
@@ -52,7 +52,7 @@
         </div>
         <center><nav aria-label="Page navigation example">
             {{ $category->links() }}
-            <center>
+            </center>
     </div>
 @endsection
  

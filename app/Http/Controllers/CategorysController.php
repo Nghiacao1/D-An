@@ -21,11 +21,12 @@ class CategorysController extends Controller
     }
     public function show(Request $request, $id)
     {
-       
+        $categorys = Category::where('id', '=', $id)->select('*')->first();
+        return view('/category/detail', compact('categorys'));
     } 
     public function create()
     {
-        //Hiển thị trang thêm buildings
+        //Hiển thị trang thêm categorys
         return view('/category.create');
     }
     public function store(Request $request)

@@ -39,6 +39,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="code">warrantyDate</label><br>
+                    <input type="text" class="form-control" name="warrantyDate" value="{{ $macs->warrantyDate }}">
+                </div>
+
+                <div class="form-group">
                     <label for="provider">provider</label><br>
                     <input type="text" class="form-control" name="provider" value="{{ $macs->provider }}">
                 </div>
