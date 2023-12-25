@@ -30,7 +30,7 @@
     <p><a class="btn btn-primary" href="/agencies">Về cơ quan</a></p>
     <div class="col-xs-4 col-xs-offset-44">
         <center><h4>Thêm cơ quan</h4></center>
-        <form action="{{ route("agencie.create") }}" method="POST">
+        <form action="{{ route("agencies.create") }}" method="POST">
             <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
             <div class="form-group">
                 <label for="name">name</label>

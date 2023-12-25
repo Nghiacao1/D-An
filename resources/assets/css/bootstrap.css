@@ -5034,6 +5034,10 @@ a.list-group-item-danger.active:focus {
 .panel-body {
   padding: 15px;
 }
+.panel-body-1 {
+  padding: 15px;
+  height: 500px;
+}
 .card-header {
   height: 75px;
 }

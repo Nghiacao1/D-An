@@ -2,8 +2,8 @@
 
 @section('content')
     <center><div class="page-header"><h4>Agencies</h4></div></center>
-        <div class="col-xs-4 col-xs-offset-4">
-            <form method="POST" action="{{route("agencie.update",['id' => $agencies->id])}}">
+        <div class="col-xs-4 col-xs-offset-44">
+            <form method="POST" action="{{route("agencies.update",['id' => $agencies->id])}}">
                 @method("PUT")
                 @csrf
                 {{-- {{Form::open("route" => "route("agencie.update",$agencie->id)",'method' => 'PUT')}} --}}

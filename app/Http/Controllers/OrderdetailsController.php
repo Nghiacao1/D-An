@@ -29,7 +29,7 @@ class OrderdetailsController extends Controller
     }
     public function store(Request $request)
     {
-        $newoder = new Orderdetail;
+        $newoder = new Orderdetail();
         $newoder->orderId = $request->orderId;
         $newoder->code = $request->code;
         $newoder->shopId = $request->shopId;

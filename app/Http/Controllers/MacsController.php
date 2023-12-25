@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\MacssDataTable;
 use Illuminate\Http\Request;
 use App\Models\Mac;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +29,7 @@ class MacsController extends Controller
     }
     public function store(Request $request)
     {
-        $newmac = new Mac; 
+        $newmac = new Mac(); 
         $newmac->fullname = $request->fullname;
 
         $newmac->email = $request->email;
