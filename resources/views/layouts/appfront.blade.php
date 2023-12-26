@@ -36,14 +36,10 @@
                             <div class="d-flex flex-row-reverse">
                                 <ul class="navbar-nav ms-auto"  >
                                     <!-- Authentication Links -->
-                                    @guest
-                                        @php
-                                            dd(Route::has('getLogin'))
-                                            
-                                        @endphp
-                                        @if (Route::has('getLogin'))
+                                    @guest('customer')
+                                        @if (Route::has('customer-login'))
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('loginfrontend') }}">{{ __('Login') }}</a>
+                                                <a class="nav-link" href="{{ route('customer-login') }}">{{ __('Login') }}</a>
                                             </li>
                                         @endif
 
@@ -52,12 +48,11 @@
                                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                             </li>
                                         @endif
-                                    @else
+                                    @else                     
                                         <li class="nav-item dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                {{ auth()->guard('customer')->customer()}}
+                                                {{$cus->fullname}}
                                             </a>
-
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();

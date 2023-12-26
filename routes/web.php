@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CustomersController;
@@ -10,6 +10,7 @@ use App\Http\Controllers\OrderdetailsController;
 use App\Http\Controllers\CategorysController;
 use App\Http\Controllers\MacsController;
 use App\Http\Controllers\AgenciesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,10 @@ use App\Http\Controllers\AgenciesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("/frontend.home");
 });
+
 Route::get('/home',function(){
     return view('Home');
 });
@@ -91,3 +93,17 @@ Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.upda
 Route::get('macs/edit/{id}', [MacsController::class,'edit']);
 Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
 Route::get('/macs/{id}', [MacsController::class,'show']);
+
+
+
+//FrontEnd//
+Route::get('/trangchu',function(){
+    return view('/frontend/home');
+});
+
+
+
+
+
+
+
