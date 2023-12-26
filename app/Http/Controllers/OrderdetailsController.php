@@ -23,7 +23,7 @@ class OrderdetailsController extends Controller
     } 
     public function create()
     {
-        //Hiển thị trang thêm buildings
+        //Hiển thị trang thêm orderdetails
         return view('orderdetails.create');
     }
     public function store(Request $request)

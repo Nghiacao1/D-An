@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header"><h2> Manage Agencies </h2></div>
+            <div class="card-header"><h2> Thông tin cơ quan </h2></div>
             <div class="panel-body">
                 <div id="agencies-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="agencies-table"></label></div>
                 <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/agencies/create">Thêm</a></div>
