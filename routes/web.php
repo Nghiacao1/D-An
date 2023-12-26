@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;

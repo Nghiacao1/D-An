@@ -8,10 +8,6 @@
                 @csrf
                 {{-- {{Form::open("route" => "route("orderdetail.update",$orderdetail->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $orderdetails->id }}">
-                <div class="form-group">
-                    <label for="id">id</label><br>
-                    <input type="text" class="form-control" name="id" value="{{ $orderdetails->id }}">
-                </div>
 
                 <div class="form-group">
                     <label for="orderId">orderID</label><br>
@@ -55,7 +51,7 @@
 
                 <div class="form-group">
                     <label for="macAdrress">macAdrress</label><br>
-                    <input type="text" class="form-control" name="macAdrress" value="{{ $orderdetails->macAdrress }}">
+                    <input type="text" class="form-control" name="macAdrress" value="{{ $orderdetails->macAddress }}">
                 </div>
 
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>
