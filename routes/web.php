@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MailManagerController;
+use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -94,6 +96,14 @@ Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.upda
 Route::get('macs/edit/{id}', [MacsController::class,'edit']);
 Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
 Route::get('/macs/{id}', [MacsController::class,'show']);
+//Mail//
+Route::get('/mailmanager', [MailManagerController::class, 'index']);
+Route::get('mailmanager/create', [MailManagerController::class,'create']); 
+Route::post('mailmanager/store', [MailManagerController::class,'store'])->name("mailmanager.create");
+Route::put('/mailmanager/pdate/{id}', [MailManagerController::class,'update'])->name('mailmanager.update');
+Route::get('mailmanager/edit/{id}', [MailManagerController::class,'edit']);
+Route::DELETE('/mailmanager/delete/{id}', [MailManagerController::class,'destroy']);
+Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
 
 
 
@@ -103,6 +113,7 @@ Route::get('/trangchu',function(){
 });
 
 
+Route::get('/send-mail', [SendMailController::class, 'index']);
 
 
 
