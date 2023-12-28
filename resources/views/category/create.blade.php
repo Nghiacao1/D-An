@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-@section('title', 'add orderdetail')
+@section('title', 'add category')
 
 @section('content')
     <center><div class="page-header"><h4>Quản lý sản phẩm</h4></div></center>
@@ -10,7 +10,7 @@
             <strong>{{ session('success') }}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                <span class="sr-only">Close</span>
+                <span class="sr-only">Close</span> 
             </button>
         </div>
     @endif
@@ -19,7 +19,7 @@
     @if ( Session::has('error') )
         <div class="alert alert-danger alert-dismissible" role="alert">
             <strong>{{ Session::get('error') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
                 <span aria-hidden="true">&times;</span>
                 <span class="sr-only">Close</span>
             </button>

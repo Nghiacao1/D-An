@@ -3803,6 +3803,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
+.navbar-2 {
+  position: relative;
+  min-height: 150px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
@@ -3994,6 +4000,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
+    margin-left: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -6237,5 +6244,31 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 3px solid var(--bs-dark);
+}
+
+.footer .copyright a {
+  color: var(--bs-red);
+}
+
+.footer .copyright a:hover {
+  color: var(--bs-primary);
+}
+.footer .footer-menu a {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 3px solid var(--bs-dark);
+}
+
+.footer .footer-menu a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+.offset-md-7 {
+    margin-left: 45%;
 }
 /*# sourceMappingURL=bootstrap.css.map */

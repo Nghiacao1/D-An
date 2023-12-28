@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MailManagerController;
+use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
+
 
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
@@ -10,6 +13,7 @@ use App\Http\Controllers\OrderdetailsController;
 use App\Http\Controllers\CategorysController;
 use App\Http\Controllers\MacsController;
 use App\Http\Controllers\AgenciesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +25,10 @@ use App\Http\Controllers\AgenciesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("/frontend.home");
 });
+
 Route::get('/home',function(){
     return view('Home');
 });
@@ -94,3 +99,26 @@ Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.upda
 Route::get('macs/edit/{id}', [MacsController::class,'edit']);
 Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
 Route::get('/macs/{id}', [MacsController::class,'show']);
+//Mail//
+Route::get('/mailmanager', [MailManagerController::class, 'index']);
+Route::get('mailmanager/create', [MailManagerController::class,'create']); 
+Route::post('mailmanager/store', [MailManagerController::class,'store'])->name("mailmanager.create");
+Route::put('/mailmanager/pdate/{id}', [MailManagerController::class,'update'])->name('mailmanager.update');
+Route::get('mailmanager/edit/{id}', [MailManagerController::class,'edit']);
+Route::DELETE('/mailmanager/delete/{id}', [MailManagerController::class,'destroy']);
+Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
+
+
+
+//FrontEnd//
+Route::get('/trangchu',function(){
+    return view('/frontend/home');
+});
+
+
+Route::get('/send-mail', [SendMailController::class, 'index']);
+
+
+
+
+

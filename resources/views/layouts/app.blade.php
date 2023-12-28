@@ -149,6 +149,9 @@
                             <li>
                                 <a href="/banners"><i class="fa fa-file-image-o"></i>Quản lý Banner</a>
                             </li>
+                            <li>
+                                <a href="/mailmanager"><i class="fa fa-envelope"></i>Quản lý Mails</a>
+                            </li>
                         </ul>
         
                     </div>
@@ -166,4 +169,4 @@
     @stack('scripts')
 </body>
 </html>
-@extends('footer')
+@extends('footerbackend')
