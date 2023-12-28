@@ -32,6 +32,9 @@ Route::post('/auth/login',function(){
     if(Auth::check()){}
     return view('home');
 });
+Route::get('/contact',function(){
+    return view('contact');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes(); 
