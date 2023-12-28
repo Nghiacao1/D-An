@@ -110,10 +110,12 @@ Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
 //FrontEnd//
 Route::get('/trangchu',function(){
     return view('/frontend/home');
-});
+})->middleware('verified');
 
 
-Route::get('/send-mail', [SendMailController::class, 'index']);
+Route::get('/send-mail', [SendMailController::class, 'demomail']);
+
+Auth::routes(['verify' => true]);
 
 
 

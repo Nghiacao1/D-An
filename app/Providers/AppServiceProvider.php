@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Customer;
 use App\Models\Building;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Auth\RegisterController;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $builcount = Building::count();
         $customers = DB::table('customers')->paginate(10);
 
+    
         View::share("customers", $customers);
         View::share('builcount', $builcount);
         View::share('cuscount',$cuscount); 

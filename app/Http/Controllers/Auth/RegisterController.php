@@ -8,6 +8,8 @@ use App\Models\Customer;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+
 
 class RegisterController extends Controller
 {
@@ -61,7 +63,6 @@ class RegisterController extends Controller
             'district'=> ['required', 'string','max:255'],
             'city'=> ['required', 'string','max:255'],
             'country'=> ['required', 'string','max:255'],
-
         ]);
     }
 
@@ -87,6 +88,5 @@ class RegisterController extends Controller
             'city'=> $data['city'],
             'country'=> $data['country'],
         ]);
-
     }
 }

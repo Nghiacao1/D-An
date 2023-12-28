@@ -19,7 +19,7 @@
 <body>
                 <nav class="navbar-2 navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
-                        <a  class="navbar-brand" href="{{ url('/home') }}"><h2 style="margin-top: 45px; margin-left:-100px"> Neotech</h2>
+                        <a  class="navbar-brand" href="{{ url('#') }}"><h2 style="margin-top: 45px; margin-left:-100px"> Neotech</h2>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>

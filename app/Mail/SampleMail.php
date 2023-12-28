@@ -21,6 +21,6 @@ class SampleMail extends Mailable
     public function build()
     {
         return $this->subject($this->content['subject'])
-            ->view('Mail.sample');
+            ->view('Mail.Mailwelcome');
     }
 }
