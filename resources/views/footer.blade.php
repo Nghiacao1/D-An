@@ -4,9 +4,9 @@
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <a href="#" class="d-inline-block mb-3">
                     <p></p> 
-                    <h1 class="text-primary">Neolock</h1>
+                    <img alt="Khoá cửa thông minh Neolock" src={{asset('img/neolock-footer.png')}} style="filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter: grayscale(100%); padding-bottom: 20px;">
                     <p></p>
-                    <img width="150" height="150" src={{asset('/img/logo.png')}} alt="Image"/>
+                    <center><img width="150" height="150" src={{asset('/img/logo.png')}} alt="Image"/></center>
                 </a>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
                         <a href="">FAQs</a>

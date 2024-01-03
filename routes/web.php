@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\MailManagerController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
@@ -35,10 +36,13 @@ Route::get('/home',function(){
 Route::get('/auth',[LoginController::class,'login']);
 Route::post('/auth/login',function(){
     if(Auth::check()){}
-    return view('home');
+    return view('Home');
 });
 Route::get('/contact',function(){
-    return view('contact');
+    return view('/frontend.contact');
+});
+Route::get('/blog',function(){
+    return view('/frontend.blog');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -107,13 +111,17 @@ Route::put('/mailmanager/pdate/{id}', [MailManagerController::class,'update'])->
 Route::get('mailmanager/edit/{id}', [MailManagerController::class,'edit']);
 Route::DELETE('/mailmanager/delete/{id}', [MailManagerController::class,'destroy']);
 Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
+//blog//
+Route::get('/blogs', [BlogsController::class, 'index']);
+Route::get('blogs/create', [BlogsController::class,'create']); 
+Route::post('blogs/store', [BlogsController::class,'store'])->name("blog.create");
+Route::put('/blogs/update/{id}', [BlogsController::class,'update'])->name('blog.update');
+Route::get('blogs/edit/{id}', [BlogsController::class,'edit']);
+Route::DELETE('/blogs/delete/{id}', [BlogsController::class,'destroy']);
+Route::get('/blogs/{id}', [BlogsController::class,'show']);
+Route::get('/blog/{id}', [BlogsController::class,'viewblog']);
 
 
-
-//FrontEnd//
-Route::get('/trangchu',function(){
-    return view('/frontend/home');
-})->middleware('verified');
 
 
 Route::get('/send-mail', [SendMailController::class, 'demomail']);

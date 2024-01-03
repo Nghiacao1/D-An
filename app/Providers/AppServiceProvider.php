@@ -29,8 +29,9 @@ class AppServiceProvider extends ServiceProvider
         $catecount= Category::count();
         $builcount = Building::count();
         $customers = DB::table('customers')->paginate(10);
+        $blogss= DB::table('blogs')->paginate(6);
 
-    
+        View::share("blogss",$blogss);    
         View::share("customers", $customers);
         View::share('builcount', $builcount);
         View::share('cuscount',$cuscount); 

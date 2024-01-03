@@ -152,6 +152,9 @@
                             <li>
                                 <a href="/mailmanager"><i class="fa fa-envelope"></i>Quản lý Mails</a>
                             </li>
+                            <li>
+                                <a href="/blogs"><i class="fa fa-envelope"></i>Quản lý Blogs</a> 
+                            </li>    
                         </ul>
         
                     </div>

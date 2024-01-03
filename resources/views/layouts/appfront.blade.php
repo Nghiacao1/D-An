@@ -19,8 +19,11 @@
 <body>
                 <nav class="navbar-2 navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
-                        <a  class="navbar-brand" href="{{ url('#') }}"><h2 style="margin-top: 45px; margin-left:-100px"> Neotech</h2>
+                        <a  class="navbar-brand" href="{{ url('/') }}"><h2 style="margin-top: 45px; margin-left:-100px">Neolock</h2>
                         </a>
+                        <a href="{{ url('/') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Trang chủ</h5></a>
+                        <a href="{{ url('/blog') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Blog</h5></a>
+                        <a href="{{ url('/contact') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Liên hệ</h5></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
