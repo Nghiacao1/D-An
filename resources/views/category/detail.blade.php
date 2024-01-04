@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header"><h2> Detail Category: {{$categorys->title}} </h2></div>
         <div class="panel-body-1">
-            <div id="categorys-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="categorys-table"></label></div>
+            <div id="categorys-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="categorys-table"></label></div>
             <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/category">Về danh sách sản phẩm</a></p>
                 <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     

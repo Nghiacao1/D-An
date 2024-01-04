@@ -129,13 +129,13 @@
                         <ul class="nav" id="main-menu">
 
                             <li>
-                                <a href="/customers"><i class="fa fa-user-circle" aria-hidden="true"></i>Quản lí khách hàng</a>
+                                <a href="/customers"><i class="fa fa-user-circle" aria-hidden="true"></i>Quản lý khách hàng</a>
                             </li>
                             <li>
                                 <a href="/buildings"><i class="fa fa-home"></i>Quản lý tòa nhà</a>
                             </li>
                             <li>
-                                <a href="/category"><i class="fa fa-cubes"></i>Quản lý thông tin sản phẩm</a>
+                                <a href="/category"><i class="fa fa-cubes"></i>Quản lý sản phẩm khách hàng</a>
                             </li>
                             <li>
                                 <a href="/agencies"><i class="fa fa-map-marker"></i>Quản lý thông tin agencies</a>
@@ -149,6 +149,15 @@
                             <li>
                                 <a href="/banners"><i class="fa fa-file-image-o"></i>Quản lý Banner</a>
                             </li>
+                            <li>
+                                <a href="/mailmanager"><i class="fa fa-envelope"></i>Quản lý Mails</a>
+                            </li>
+                            <li>
+                                <a href="/blogs"><i class="fa fa-envelope"></i>Quản lý Blogs</a> 
+                            </li>    
+                            <li>
+                                <a href="/products"><i class="fa fa-product-hunt"></i>Quản lý thông tin sản phẩm</a> 
+                            </li> 
                         </ul>
         
                     </div>
@@ -166,4 +175,4 @@
     @stack('scripts')
 </body>
 </html>
-@extends('footer')
+@extends('footerbackend')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý Toà Nhà</h4></div>
+    <div class="page-header"><h4>Chỉnh sửa dữ liệu toà nhà</h4></div>
         <div class="col-xs-4 col-xs-offset-44">
             <form method="POST" action="{{route("building.update",['id' => $buildings->id])}}">
                 @method("PUT")

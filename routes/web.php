@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\MailManagerController;
+use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
@@ -11,6 +13,7 @@ use App\Http\Controllers\OrderdetailsController;
 use App\Http\Controllers\CategorysController;
 use App\Http\Controllers\MacsController;
 use App\Http\Controllers\AgenciesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,16 +25,26 @@ use App\Http\Controllers\AgenciesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("/frontend.home");
 });
+
 Route::get('/home',function(){
     return view('Home');
 });
 Route::get('/auth',[LoginController::class,'login']);
 Route::post('/auth/login',function(){
     if(Auth::check()){}
-    return view('home');
+    return view('Home');
+});
+Route::get('/contact',function(){
+    return view('/frontend.contact');
+});
+Route::get('/blog',function(){
+    return view('/frontend.blog');
+});
+Route::get('/product',function(){
+    return view('/frontend.product');
 });
 
 Route::get('/homefront',function(){
@@ -97,3 +110,41 @@ Route::put('/macs/pdate/{id}', [MacsController::class,'update'])->name('mac.upda
 Route::get('macs/edit/{id}', [MacsController::class,'edit']);
 Route::DELETE('/macs/delete/{id}', [MacsController::class,'destroy']);
 Route::get('/macs/{id}', [MacsController::class,'show']);
+//Mail//
+Route::get('/mailmanager', [MailManagerController::class, 'index']);
+Route::get('mailmanager/create', [MailManagerController::class,'create']); 
+Route::post('mailmanager/store', [MailManagerController::class,'store'])->name("mailmanager.create");
+Route::put('/mailmanager/pdate/{id}', [MailManagerController::class,'update'])->name('mailmanager.update');
+Route::get('mailmanager/edit/{id}', [MailManagerController::class,'edit']);
+Route::DELETE('/mailmanager/delete/{id}', [MailManagerController::class,'destroy']);
+Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
+//blog//
+Route::get('/blogs', [BlogsController::class, 'index']);
+Route::get('blogs/create', [BlogsController::class,'create']); 
+Route::post('blogs/store', [BlogsController::class,'store'])->name("blog.create");
+Route::put('/blogs/update/{id}', [BlogsController::class,'update'])->name('blog.update');
+Route::get('blogs/edit/{id}', [BlogsController::class,'edit']);
+Route::DELETE('/blogs/delete/{id}', [BlogsController::class,'destroy']);
+Route::get('/blogs/{id}', [BlogsController::class,'show']);
+Route::get('/blog/{id}', [BlogsController::class,'viewblog']);
+//product//
+Route::get('/products', [productsController::class, 'index']);
+Route::get('products/create', [productsController::class,'create']); 
+Route::post('products/store', [productsController::class,'store'])->name("product.create");
+Route::put('/products/update/{id}', [productsController::class,'update'])->name('product.update');
+Route::get('products/edit/{id}', [productsController::class,'edit']);
+Route::DELETE('/products/delete/{id}', [productsController::class,'destroy']);
+Route::get('/products/{id}', [productsController::class,'show']);
+Route::get('/product/{id}', [productsController::class,'viewproduct']);
+
+
+
+
+Route::get('/send-mail', [SendMailController::class, 'demomail']);
+
+Auth::routes(['verify' => true]);
+
+
+
+
+

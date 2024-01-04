@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý Banner</h4></div>
+    <div class="page-header"><h4>Chỉnh sửa dữ liệu Banner</h4></div>
         <div class="col-xs-4 col-xs-offset-44">
             <form method="POST" action="{{route("banner.update",['id' => $banners->id])}}">
                 @method("PUT")

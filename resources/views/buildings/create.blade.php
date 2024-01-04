@@ -2,7 +2,7 @@
 @section('title', 'add building')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý Toà Nhà</h4></div>
+    <div class="page-header"><h4>Quản lý toà nhà</h4></div>
 
     <?php //Hiển thị thông báo thành công?>
     @if ( Session::has('success') )

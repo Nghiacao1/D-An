@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <center> <div class="card-header"><h2> CHi tiết hóa đơn </h2></div> </center>
+            <div class="card-header"><h2> Chi tiết hóa đơn </h2></div>
             <div class="panel-body">
-                <div id="orderdetails-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="orderdetails-table"></label></div>
+                <div id="orderdetails-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="orderdetails-table"></label></div>
                 <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/orderdetails/create">Thêm</a></div>
                 <p></p>
                 <div class="table-responsive">
