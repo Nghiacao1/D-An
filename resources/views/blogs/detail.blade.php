@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header"><h2> Detail Blogs: {{$blogs->title}} </h2></div>
         <div class="panel-body-1">
-            <div id="banners-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="banners-table"></label></div>
+            <div id="banners-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="banners-table"></label></div>
             <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/blogs">Về danh sách</a></p>
                 <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     

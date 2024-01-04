@@ -5,8 +5,7 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\MailManagerController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
@@ -43,6 +42,9 @@ Route::get('/contact',function(){
 });
 Route::get('/blog',function(){
     return view('/frontend.blog');
+});
+Route::get('/product',function(){
+    return view('/frontend.product');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -120,6 +122,15 @@ Route::get('blogs/edit/{id}', [BlogsController::class,'edit']);
 Route::DELETE('/blogs/delete/{id}', [BlogsController::class,'destroy']);
 Route::get('/blogs/{id}', [BlogsController::class,'show']);
 Route::get('/blog/{id}', [BlogsController::class,'viewblog']);
+//product//
+Route::get('/products', [productsController::class, 'index']);
+Route::get('products/create', [productsController::class,'create']); 
+Route::post('products/store', [productsController::class,'store'])->name("product.create");
+Route::put('/products/update/{id}', [productsController::class,'update'])->name('product.update');
+Route::get('products/edit/{id}', [productsController::class,'edit']);
+Route::DELETE('/products/delete/{id}', [productsController::class,'destroy']);
+Route::get('/products/{id}', [productsController::class,'show']);
+Route::get('/product/{id}', [productsController::class,'viewproduct']);
 
 
 

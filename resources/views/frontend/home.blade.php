@@ -1,7 +1,7 @@
 @extends('layouts.appfront')
 
 @section('content')
-    <div class="banner">
+    <div style="margin-top: 5px" class="banner">
         <div class="box-right">
         </div>
         <div class="to-bottom">
@@ -51,9 +51,10 @@
     </section>
     <div class="wp-products">
         <h2>SẢN PHẨM HOT</h2>
-        <ul class="list-products">
-            <div class="item">
-                <img src={{asset('/img/product_1.png')}} alt="">
+        <ul style="margin-left: -70px" class="list-products">
+            @foreach($productss as $row)
+            <a href="/product/{{$row->id}}"><div class="item">
+                <img width="174px" height="174px" src={{$row->images}} alt="">
                 <div style="margin-top: 15px" class="stars">
                     <div style="margin: auto" class="column">
                         <span>
@@ -73,154 +74,12 @@
                         </span>
                     </div>
                 </div>
-                <div class="name">Khoá điện tử điều khiển qua APP cửa kính, khoá xe máy chữ U vân tay POKU3</div>
-                <div class="price">Giá 590.000 VNĐ</div>
-            </div>
-
-
-            <div class="item">
-                <img height="174" width="174" src={{asset('/img/product_2.png')}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                    </div>
-                </div>
-                <div class="name">Khóa cửa cao cấp neolock neoLUX3</div>
-                <div class="price">Giá 7.650.000 VNĐ</div>
-            </div>
-
-
-            <div class="item">
-                <img height="174" width="174" src={{asset('/img/product_3.png')}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>           
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="name">Khóa cửa cổng vân tay thông minh NeoA3S</div>
-                <div class="price">Giá 3.950.000 VNĐ</div>
-            </div>
-            <div class="item">
-                <img height="174" width="174" src={{asset('/img/product_4.png')}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                    </div>
-                </div>
-
-                <div  class="name">Khóa cửa tay tròn vân tay thông minh neoA7S</div>
-                <div class="price">Giá 3.851.000 VNĐ</div>
-            </div>
-
-            <div class="item">
-                <img height="174" width="174" src={{asset('/img/product_5.png')}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                    </div>
-                </div>
-                <div class="name">Khóa cửa nhôm vân tay, qua APP neoG7S</div>
-                <div class="price">3.910.000 VNĐ</div>
-            </div>
-
-            <div class="item">
-                <img height="174" width="174" src={{asset('/img/product_6.png')}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                    </div>
-                </div>
-                <div class="name">Khoá cửa kính vân tay neoA6S</div>
-                <div class="price">Giá 3.900.000 VNĐ</div>
-            </div>
-        </ul>
-        <div class="list-page">
-            <div class="item">
-                <a href="">1</a>
-            </div>
-            <div class="item">
-                <a href="">2</a>
-            </div>
-            <div class="item">
-                <a href="">3</a>
-            </div>
-            <div class="item">
-                <a href="">4</a>
-            </div>
-        </div>
+                <div class="name">{{$row->name}}</div>
+                <div class="price">Giá {{$row->price}} VNĐ</div>
+            </div></a>
+            @endforeach    
+        </ul>    
     </div>
-
     <div id="saleoff">
         <div class="box-left">
             <h1>

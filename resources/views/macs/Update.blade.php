@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý Macs</h4></div>
+    <div class="page-header"><h4>Chỉnh sửa dữ liệu Macs</h4></div>
         <div class="col-xs-4 col-xs-offset-4">
             <form method="POST" action="{{route("mac.update",['id' => $macs->id])}}">
                 @method("PUT")

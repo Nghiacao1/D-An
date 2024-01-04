@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header"><h2> Manage Blogs </h2></div>
+            <div class="card-header"><h2> Quản lý Blog </h2></div>
             <div class="panel-body">
-                <div id="banners-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="banners-table"></label></div>
+                <div id="banners-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="banners-table"></label></div>
                 <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/blogs/create">Thêm</a></div>
                 <p></p>
                 <div class="table-responsive">

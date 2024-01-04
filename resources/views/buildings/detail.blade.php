@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header"><h2> Detail building: {{$buildings->name}} </h2></div>
         <div class="panel-body-1">
-            <div id="buildings-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="buildings-table"></label></div>
+            <div id="buildings-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="buildings-table"></label></div>
             <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/buildings">Về danh sách</a></p>
                 <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     

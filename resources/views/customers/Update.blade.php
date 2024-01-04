@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý khách hàng</h4></div>
+    <div class="page-header"><h4>Chỉnh sửa thông tin khách hàng</h4></div>
     <form method="POST" action="{{route("customer.update",['id' => $customers->id])}}">
         <div class="row">
                 @method("PUT")

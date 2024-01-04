@@ -1,96 +1,23 @@
 @extends('layouts.appfront')
 
 @section('content')
-        <!-- banner -->
-        <div class="full_bg">
-            <div class="slider_main">
-            <!-- carousel code -->
-            <div id="banner1" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#banner1" data-slide-to="0" class="active"></li>
-                    <li data-target="#banner1" data-slide-to="1"></li>
-                    <li data-target="#banner1" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <!-- first slide -->
-                    <div class="carousel-item active">
-                        <div class="container">
-                        <div class="carousel-caption relative">
-                            <div class="row d_flex">
-                                <div class="col-lg-5 offset-lg-7 col-md-7 offset-md-5">
-                                    <div class="creative">
-                                    <h1>Giải pháp bán hàng qua tủ locker </h1>
-                                    <h3>Chào mừng các bạn đến với thế giới mua sắm tiện lợi và hiện đại ngay tại khách sạn với sự kết hợp của tủ locker mini và ứng dụng di động.</h3>
-                                    <a class="read_more" href="Javascript:void(0)">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- second slide -->
-                    <div class="carousel-item">
-                        <div class="container">
-                        <div class="carousel-caption relative">
-                            <div class="row d_flex">
-                                <div class="col-lg-5 offset-lg-7 col-md-7 offset-md-5">
-                                <div class="creative">
-                                    <h1>Giải pháp quản lý lịch phòng họp thông minh </h1>
-                                    <h3>Sử dụng phần mềm quản lý việc đặt phòng đi kèm với hệ thống màn hình hoặc máy tinh bảng gắn tại mỗi phòng họp</h3>
-                                    <a class="read_more" href="Javascript:void(0)">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- third slide-->
-                    <div class="carousel-item">
-                        <div class="container">
-                        <div class="carousel-caption relative">
-                            <div class="row d_flex">
-                                <div class="col-lg-5 offset-lg-7 col-md-7 offset-md-5">
-                                <div class="creative">
-                                    <h1>Giải Pháp Giao Nhận Hàng Hiện Đại Cho Chung Cư </h1>
-                                    <h3>Thời đại mua sắm và giao nhận hàng ngày càng phát triển, neolocker mang lại những lợi ích đặc biệt cho cư dân chung cư.</h3>
-                                    <a class="read_more" href="Javascript:void(0)">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- controls -->
-                <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-                </a>
-            </div>
-            </div>
-        </div>
-        <!-- body -->
-        <!-- perfect -->
+    <!-- perfect -->
     <div class="container">
+        <h1>Bài viết của Neolock</h1>
         <div style="margin-top: 30px" class="row">
             <div class="col-sm-8">
                 @foreach($blogss as $row) 
-                    <div style="margin-top: 30px" class="col-md-12">
-                        <div class="perfect_img">
-                            <a href="/blog/{{$row->id}}"><figure><img width="750" height="400" src={{$row->images}} alt="#"/></figure></a>
-                        </div>
+                    <div class="post-content-body" style="overflow: hidden" itemprop="articleBody">
+                        <a href="/blog/{{$row->id}}"><img style="margin-top: 20px" width="750" height="450" src={{$row->images}}> 
                     </div>
                     <div style="margin-left:10px" class="col-md-12">
                         <div class="titlepage text_align_left">   
                             <h2 style="margin-top: 10px"><a href="/blog/{{$row->id}}">{{$row->title}}</a></h2>
+                            <h6>Ngày đăng: {{$row->created_at}}</h6>
                             <p>{{$row->synopsis}}</p>
                         </div>
                     </div>
-                    <center style="margin-left:25px" ><hr width="100%" noshade="noshade"/></center>
+                    <center><hr width="100%" noshade="noshade"/></center>
                     @endforeach
             </div>
             <div class="col-sm-4">    
@@ -106,8 +33,33 @@
                     <div style="margin-top: 50px" class="sidebar-box">
                         <h3>Nổi Bật</h3>
                         <hr width="100%" noshade="noshade"/>
-                        <div class="post-entry-sidebar"></div>
+                        <div class="post-entry-sidebar">
+                            @foreach($blogss as $row)
+                            <ul>
+                                <li>
+                                    <a href="/blog/{{$row->id}}">
+                                        <div class="text">
+                                            <img class="img-responsive" src={{$row->images}} alt="">
+                                            <h4>{{$row->title}}</h4>
+                                            <div class="post-meta">
+                                                <span class="mr-2">ngay-dang &nbsp;-&nbsp; {{$row->created_at}} </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            @endforeach
+                        </div>
                     </div>
+                    <ul class="tags">
+                        <li><a title="smartlocker" href="/tin-tuc/tag/smartlocker">smartlocker</a></li>
+                        <li><a title=" rentalservice" href="/tin-tuc/tag/rentalservice"> rentalservice</a></li>
+                        <li><a title="neolock" href="/tin-tuc/tag/neolock">neolock</a></li>
+                        <li><a title=" lockerrental" href="/tin-tuc/tag/lockerrental"> lockerrental</a></li>
+                        <li><a title="mobileapp" href="/tin-tuc/tag/mobileapp">mobileapp</a></li>
+                        <li><a title="neolocker" href="/tin-tuc/tag/neolocker">neolocker</a></li>
+                        <li><a title="tủ cho thuê" href="/tin-tuc/tag/tu-cho-thue">tủ cho thuê</a></li>
+                      </ul>
                 </div>    
             </div>      
         </div>
