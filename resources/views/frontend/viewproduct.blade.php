@@ -20,8 +20,8 @@
                     <div style="margin-bottom: 10px; margin-top:10px" class="text-left">
                       <h1 property="schema:name" itemprop="name">{{$products->name}}</h1>
                     </div>
-                    <h5 class="text-left">Mã sản phẩm:  {{$products->product_id}}</h5>
-                    <h5 class="text-left">Bảo hành:  12 tháng</h5>
+                    <p class="text-left">Mã sản phẩm:  {{$products->product_id}}</p>
+                    <p style="margin-top: -20px" class="text-left">Bảo hành:  12 tháng</p>
                   </div>
                   <div itemprop="description" class="excerpt">
                     <p>{{$products->introduce}}</p>
