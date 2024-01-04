@@ -17,6 +17,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+
                 <nav class="navbar-2 navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
                         <a  class="navbar-brand" href="{{ url('/') }}"><h2 style="margin-top: 45px; margin-left:-100px;margin-right:50px">Neolock</h2>
@@ -37,6 +38,7 @@
                             </ul>
                             
                             <!-- Right Side Of Navbar -->
+
                             <div style="margin-top: 50px" class="d-flex flex-row-reverse">
                                 <ul class="navbar-nav ms-auto"  >
                                     <!-- Authentication Links -->
