@@ -34,8 +34,13 @@ Route::post('/auth/login',function(){
     return view('home');
 });
 
+Route::get('/homefront',function(){
+    return view('homefront');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes(); 
+
 //buildings//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
