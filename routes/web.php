@@ -40,6 +40,9 @@ Route::post('/auth/login',function(){
 Route::get('/contact',function(){
     return view('contact');
 });
+Route::get('/about',function(){
+    return view('about');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes(); 
