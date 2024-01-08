@@ -41,8 +41,16 @@
                             <input type="text" class="form-control" id="fullname"  name="fullname" placeholder="fullname" maxlength="100" required />
                         </div>
                         <div class="form-group">
+                            <label for="customerId">Customer ID</label>
+                            <input type="text" class="form-control" id="customerId"  name="customerId" placeholder="Customer ID" maxlength="200" required />
+                        </div>
+                        <div class="form-group">
                             <label for="name">email</label>
                             <input type="text" class="form-control" id="email"  name="email" placeholder="email" maxlength="200" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="mac">Macs</label>
+                            <input type="text" class="form-control" id="mac"  name="mac" placeholder="Mac" maxlength="350" required />
                         </div>
                         <div class="form-group">
                             <label for="name">address</label>
@@ -60,19 +68,19 @@
                             <label for="name">saleMan</label>
                             <input type="text" class="form-control" id="saleMan"  name="saleMan" placeholder="saleMane" maxlength="200" required />
                         </div>
+                    </div>
+                    <div class="col-sm"> 
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <input type="text" class="form-control" id="status"  name="status" placeholder="Status" maxlength="350" required />
+                        </div>
                         <div class="form-group">
                             <label for="name">warrantyDate</label>
                             <input type="text" class="form-control" id="warrantyDate"  name="warrantyDate" placeholder="warrantyDate" maxlength="350" required />
                         </div>
-                    </div>
-                    <div class="col-sm"> 
                         <div class="form-group">
                             <label for="name">provider</label>
                             <input type="text" class="form-control" id="provider"  name="provider" placeholder="provider" maxlength="350" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">updatedDate</label>
-                            <input type="text" class="form-control" id="updatedDate"  name="updatedDate" placeholder="updatedDate" maxlength="50" required />
                         </div>
                         <div class="form-group">
                             <label for="name">lockName</label>

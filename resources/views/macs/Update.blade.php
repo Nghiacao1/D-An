@@ -2,15 +2,22 @@
 
 @section('content')
     <div class="page-header"><h4>Chỉnh sửa dữ liệu Macs</h4></div>
-        <div class="col-xs-4 col-xs-offset-4">
-            <form method="POST" action="{{route("mac.update",['id' => $macs->id])}}">
-                @method("PUT")
-                @csrf
+    <form method="POST" action="{{route("mac.update",['id' => $macs->id])}}">
+        <div class="row">
+            @method("PUT")
+            @csrf
+            <div class="col-sm">
                 {{-- {{Form::open("route" => "route("mac.update",$mac->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $macs->id }}">
+                
                 <div class="form-group">
                     <label for="fullname">fullname</label><br>
                     <input type="text" class="form-control" name="fullname" value="{{ $macs->fullname }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="customerId">Customer ID</label><br>
+                    <input type="text" class="form-control" name="customerId" value="{{ $macs->customerId }}">
                 </div>
 
                 <div class="form-group">
@@ -38,6 +45,12 @@
                     <input type="text" class="form-control" name="saleMan" value="{{ $macs->saleMan }}">
                 </div>
 
+                <div class="form-group">
+                    <label for="status">Status</label><br>
+                    <input type="text" class="form-control" name="status" value="{{ $macs->status }}">
+                </div>
+            </div>
+            <div class="col-sm">
                 <div class="form-group">
                     <label for="code">warrantyDate</label><br>
                     <input type="text" class="form-control" name="warrantyDate" value="{{ $macs->warrantyDate }}">
@@ -77,10 +90,10 @@
                     <label for="buyerAddress">buyerAddress</label><br>
                     <input type="text" class="form-control" name="buyerAddress" value="{{ $macs->buyerAddress }}">
                 </div>
-
+            </div>
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>
-
-            </form>
         </div>
+        </form>
+    </div>
 {{-- {{Form::close()}} --}}
 @endsection

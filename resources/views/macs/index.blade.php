@@ -43,6 +43,7 @@
                             <td>{{$row->warrantyDate}}</td>
                             <td>{{$row->provider}}</td>
                             <td>{{$row->updatedDate}}</td>
+                            <td>{{$row->lockName}}</td>
                             <td>{{$row->buyerName}}</td>
                             <td>{{$row->buyerEmail}}</td>
                             <td>{{$row->buyerPhone}}</td>

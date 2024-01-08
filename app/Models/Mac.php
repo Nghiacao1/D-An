@@ -20,6 +20,7 @@ class Mac extends Model
         'purchaseDate',
         'sellDate',
         'saleMan',
+        'status',
         'provider',
         'updatedDate',
         'lockName',
