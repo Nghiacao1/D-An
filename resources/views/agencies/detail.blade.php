@@ -19,6 +19,9 @@
                               <label class="col">name:</label>
                               <div class="col">{{$agencies->name}}</div>
                               <div class="w-100"></div>
+                              <label class="col"><code></code>:</label>
+                              <div class="col">{{$agencies->code}}</div>
+                              <div class="w-100"></div>
                               <label class="col">email:</label>
                               <div class="col">{{$agencies->email}}</div>
                               <div class="w-100"></div>

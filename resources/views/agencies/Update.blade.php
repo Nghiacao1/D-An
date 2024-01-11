@@ -14,9 +14,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="email">code</label><br>
+                    <input type="text" class="form-control" name="code" value="{{ $agencies->code }}">
+                </div>
+
+                <div class="form-group">
                     <label for="email">email</label><br>
                     <input type="text" class="form-control" name="email" value="{{ $agencies->email }}">
                 </div>
+
+                
 
                 <div class="form-group">
                     <label for="cccd">cccd</label><br>

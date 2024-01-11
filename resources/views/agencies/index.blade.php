@@ -15,6 +15,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>name</th>
+                                <th>code</th>
                                 <th>Email</th>
                                 <th>Cccd</th>
                                 <th>Address	</th>
@@ -25,6 +26,7 @@
                         <tr>
                             <td>{{$row->id}}</td>
                             <td><a href="/agencies/{{$row->id}}">{{$row->name}}</a></td>
+                            <td>{{$row->code}}</td>
                             <td>{{$row->email}}</td>
                             <td>{{$row->cccd}}</td>
                             <td>{{$row->address}}</td>
