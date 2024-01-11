@@ -30,7 +30,7 @@
             <div class="panel panel-primary text-center no-boder bg-color-blue">
                 <div class="panel-body">
                     <i class="fa fa-shopping-cart fa-5x"></i>
-                    <h3>{{$catecount}} </h3>
+                    <h3>{{$ordercount}} </h3>
                 </div>
                 <div class="panel-footer back-footer-blue">
                     Sales
@@ -57,7 +57,7 @@
                     <h3> {{$sales}} VNĐ</h3>
                 </div>
                 <div class="panel-footer back-footer-brown">
-                    Tổng thu nhập 
+                    Total income
 
                 </div>
             </div>

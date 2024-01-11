@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
         $productss = DB::table('products')->paginate(8);
         $productsShow = DB::table('products')->paginate(12);
         $cuscount = Customer::count();
-        $catecount = Category::count();
+        $ordercount = Orderdetail::count();
         $builcount = Building::count();
         $customers = DB::table('customers')->paginate(10);
         $blogss= DB::table('blogs')->paginate(6);
@@ -67,6 +67,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('customers', $customers);
         View::share('builcount', $builcount);
         View::share('cuscount',$cuscount); 
-        View::share('catecount',$catecount);
+        View::share('ordercount',$ordercount);
     }
 }
