@@ -19,6 +19,7 @@ class Agencie extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'code',
         'email',
         'cccd',
         'address',

@@ -37,6 +37,10 @@
                 <input type="text" class="form-control" id="name"  name="name" placeholder="name" maxlength="255" required />
             </div>
             <div class="form-group">
+                <label for="name"><code></code></label>
+                <input type="text" class="form-control" id="code"  name="code" placeholder="code" maxlength="45" required />
+            </div>
+            <div class="form-group">
                 <label for="name">email</label>
                 <input type="text" class="form-control" id="email"  name="email" placeholder="email" maxlength="45" required />
             </div>
