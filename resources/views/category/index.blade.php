@@ -39,7 +39,7 @@
                             <td>{{$row->color_tag}}</td>
                             <td>{{$row->locklist}}</td>
                             <td><a class="btn btn-primary" href="category/edit/{{$row->id}}">Edit</a>  
-                                <form method="POST" style="display:inline-block" action="categorys/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
+                                <form method="POST" style="display:inline-block" action="category/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
                                     @method('DELETE')
                                     @csrf
                                         <button class="btn btn-primary" type="submit">Delete</button>
