@@ -64,6 +64,7 @@ class OrderdetailsController extends Controller
         $orderdetails->quantity = $request->quantity;
         $orderdetails->price = $request->price;
         $orderdetails->description = $request->description;
+        $orderdetails->macAddress = $request->macAddress;
 
         $orderdetails->save();
         if($orderdetails instanceof Orderdetail) {

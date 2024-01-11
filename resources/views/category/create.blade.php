@@ -2,7 +2,7 @@
 @section('title', 'add category')
 
 @section('content')
-    <center><div class="page-header"><h4>Quản lý sản phẩm</h4></div></center>
+    <center><div class="page-header"><h4>Quản lý sản phẩm khách hàng</h4></div></center>
 
     <?php //Hiển thị thông báo thành công?>
     @if ( Session::has('success') )
