@@ -50,8 +50,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="macAdrress">macAdrress</label><br>
-                    <input type="text" class="form-control" name="macAdrress" value="{{ $orderdetails->macAddress }}">
+                    <label for="macAddress">macAdrress</label><br>
+                    <input type="text" class="form-control" name="macAddress" value="{{ $orderdetails->macAddress }}">
                 </div>
 
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>

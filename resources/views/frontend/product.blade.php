@@ -13,7 +13,7 @@
     <div class="wp-products">
         <ul style="margin-left: -70px" class="list-products">
             @foreach($productsShow as $row)
-            <a href="/product/{{$row->id}}"><div style="background-color:black" class="item">
+            <a href="/product/{{$row->id}}"><div style="margin-bottom: 150px" style="background-color:black" class="item">
                 <img width="290px" height="300px" src={{$row->images}} alt="">
                 <div style="margin-top: 15px" class="stars">
                     <div style="margin: auto" class="column">

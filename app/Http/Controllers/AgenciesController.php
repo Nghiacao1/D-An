@@ -32,6 +32,7 @@ class AgenciesController extends Controller
     {
         $newage = new Agencie; 
         $newage->name = $request->name;
+        $newage->code = $request->code;
         $newage->email = $request->email;
         $newage->cccd = $request->cccd;
         $newage->address = $request->address;
@@ -54,6 +55,7 @@ class AgenciesController extends Controller
     {
         $agencies = Agencie::find($id);
         $agencies->name = $request->name;
+        $agencies->code = $request->code;
         $agencies->email = $request->email;
         $agencies->cccd = $request->cccd;
         $agencies->address = $request->address;

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-header">
@@ -29,7 +30,7 @@
             <div class="panel panel-primary text-center no-boder bg-color-blue">
                 <div class="panel-body">
                     <i class="fa fa-shopping-cart fa-5x"></i>
-                    <h3>{{$catecount}} </h3>
+                    <h3>{{$ordercount}} </h3>
                 </div>
                 <div class="panel-footer back-footer-blue">
                     Sales
@@ -52,11 +53,11 @@
         <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="panel panel-primary text-center no-boder bg-color-brown">
                 <div class="panel-body">
-                    <i class="fa fa-users fa-5x"></i>
-                    <h3>36,752 </h3>
+                    <i class="fa fa-money fa-5x"></i>
+                    <h3> {{$sales}} VNĐ</h3>
                 </div>
                 <div class="panel-footer back-footer-brown">
-                    No. of Visits
+                    Total income
 
                 </div>
             </div>
@@ -64,7 +65,7 @@
     </div>
 
 
-    <div class="row">
+    <div style="margin-left: -16.5px" class="row">
         <div class="col-sm">
             <div class="panel panel-default">
                 <div class="panel-body">

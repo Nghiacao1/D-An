@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">macAddress</label>
-                        <input type="text" class="form-control" id="macAddress"  name="macAddress" placeholder="macAddress" maxlength="15" required />
+                        <input type="text" class="form-control" id="macAddress"  name="macAddress" placeholder="macAddress" maxlength="50" required />
                     </div>
                 </div>
             <center><button type="submit" class="btn btn-primary">Thêm</button></center>

@@ -9,6 +9,7 @@
                     <h6 style="margin-left: 10px;margin-top:10px">Ngày đăng: {{$blogs->created_at}}</h6>
                     <img style="margin-top: 20px" width="750" height="450" src={{$blogs->images}}> 
                     <p>{{$blogs->content}}</p>
+                    <img style="margin-top: 20px" width="750" height="450" src={{$blogs->images_2}}> 
                 </div>
             </div>
             <div class="col-sm-4">    

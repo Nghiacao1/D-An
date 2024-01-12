@@ -28,9 +28,8 @@ class CustomersController extends Controller
     }
     public function store(Request $request)
     {
-        $customerCode = request($request->code,'');
         $newcus = new Customer;
-        $newcus->code = $customerCode;
+        $newcus->code = $request->code;
         $newcus->fullname = $request->fullname;
         $newcus->email = $request->email;
         $newcus->password = $request->password;

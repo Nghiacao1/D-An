@@ -10,15 +10,15 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Neo3S',     {{$lock1}}],
+          ['Neo7S',     {{$lock2}}],
+          ['Neo66',  {{$lock3}}],
+          ['NeoA6S',  {{$lock4}}],
+          ['NeoLUX3',  {{$lock5}}]
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'Loại khóa phổ biến'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -29,20 +29,22 @@
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
         google.charts.setOnLoadCallback(drawChart);
-  
+        
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Year', 'Sales', 'Expenses', 'Profit'],
-            ['2014', 1000, 400, 200],
-            ['2015', 1170, 460, 250],
-            ['2016', 660, 1120, 300],
-            ['2017', 1030, 540, 350]
+            ['Year', 'Sales'],
+            ['2018', {{$sales18}}],
+            ['2019', {{$sales19}}],
+            ['2020', {{$sales20}}],
+            ['2021', {{$sales21}}],
+            ['2022', {{$sales22}}],
+            ['2023', {{$sales23}}]
           ]);
   
           var options = {
             chart: {
               title: 'Company Performance',
-              subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+              subtitle: 'Sales, Expenses, and Profit: 2018-2023',
             }
           };
   
@@ -153,7 +155,7 @@
                                 <a href="/mailmanager"><i class="fa fa-envelope"></i>Quản lý Mails</a>
                             </li>
                             <li>
-                                <a href="/blogs"><i class="fa fa-envelope"></i>Quản lý Blogs</a> 
+                                <a href="/blogs"><i class="fa fa-file-text"></i>Quản lý Blogs</a> 
                             </li>    
                             <li>
                                 <a href="/products"><i class="fa fa-product-hunt"></i>Quản lý thông tin sản phẩm</a> 
