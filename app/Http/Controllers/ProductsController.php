@@ -72,11 +72,11 @@ class ProductsController extends Controller
         $products->support_system = $request->support_system;
         $products->power = $request->power;
         $products->lowbattery_warning = $request->lowbattery_warning;
-        $products->img_description = $request->security;
+        $products->img_description = $request->img_description;
 
 
         $products->save();
-        if($products instanceof Customer) {
+        if($products instanceof Product) {
             toastr()->success('Data update success');
             return redirect('/products');
         } 
