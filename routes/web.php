@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\MailManagerController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\BuildingsController;
 use App\Http\Controllers\BannersController;
@@ -35,10 +35,20 @@ Route::get('/home',function(){
 Route::get('/auth',[LoginController::class,'login']);
 Route::post('/auth/login',function(){
     if(Auth::check()){}
-    return view('home');
+    return view('Home');
 });
 Route::get('/contact',function(){
-    return view('contact');
+    return view('/frontend.contact');
+});
+Route::get('/blog',function(){
+    return view('/frontend.blog');
+});
+Route::get('/product',function(){
+    return view('/frontend.product');
+});
+
+Route::get('/homefront',function(){
+    return view('homefront');
 });
 Route::get('/about',function(){
     return view('about');
@@ -46,6 +56,7 @@ Route::get('/about',function(){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes(); 
+
 //buildings//
 Route::get('/buildings', [BuildingsController::class, 'index']);
 Route::get('buildings/create', [BuildingsController::class,'create']); 
@@ -110,16 +121,31 @@ Route::put('/mailmanager/pdate/{id}', [MailManagerController::class,'update'])->
 Route::get('mailmanager/edit/{id}', [MailManagerController::class,'edit']);
 Route::DELETE('/mailmanager/delete/{id}', [MailManagerController::class,'destroy']);
 Route::get('/mailmanager/{id}', [MailManagerController::class,'show']);
+//blog//
+Route::get('/blogs', [BlogsController::class, 'index']);
+Route::get('blogs/create', [BlogsController::class,'create']); 
+Route::post('blogs/store', [BlogsController::class,'store'])->name("blog.create");
+Route::put('/blogs/update/{id}', [BlogsController::class,'update'])->name('blog.update');
+Route::get('blogs/edit/{id}', [BlogsController::class,'edit']);
+Route::DELETE('/blogs/delete/{id}', [BlogsController::class,'destroy']);
+Route::get('/blogs/{id}', [BlogsController::class,'show']);
+Route::get('/blog/{id}', [BlogsController::class,'viewblog']);
+//product//
+Route::get('/products', [productsController::class, 'index']);
+Route::get('products/create', [productsController::class,'create']); 
+Route::post('products/store', [productsController::class,'store'])->name("product.create");
+Route::put('/products/update/{id}', [productsController::class,'update'])->name('product.update');
+Route::get('products/edit/{id}', [productsController::class,'edit']);
+Route::DELETE('/products/delete/{id}', [productsController::class,'destroy']);
+Route::get('/products/{id}', [productsController::class,'show']);
+Route::get('/product/{id}', [productsController::class,'viewproduct']);
 
 
 
-//FrontEnd//
-Route::get('/trangchu',function(){
-    return view('/frontend/home');
-});
 
+Route::get('/send-mail', [SendMailController::class, 'demomail']);
 
-Route::get('/send-mail', [SendMailController::class, 'index']);
+Auth::routes(['verify' => true]);
 
 
 

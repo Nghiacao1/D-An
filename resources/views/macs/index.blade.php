@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header"><h2> Manage Macs </h2></div>
+            <div class="card-header"><h2> Quản lý Macs </h2></div>
             <div class="panel-body">
-                <div id="macs-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="macs-table"></label></div>
+                <div id="macs-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="macs-table"></label></div>
                 <div class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/macs/create">Thêm</a></div>
                 <p></p>
                 <div class="table-responsive">

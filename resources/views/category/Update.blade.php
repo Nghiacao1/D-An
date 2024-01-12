@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-header"><h4>Quản lý sản phẩm</h4></div>
+    <div class="page-header"><h4>Chỉnh sửa dữ liệu sản phẩm khách hàng</h4></div>
         <div class="col-xs-4 col-xs-offset-44">
             <form method="POST" action="{{route("category.update",['id'=> $categorys->id])}}">
                 @method("PUT")
