@@ -20,23 +20,23 @@
 
                 <nav class="navbar-2 navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
-                        <a  class="navbar-brand" href="{{ url('/') }}"><h2 style="margin-top: 45px; margin-left:-100px;margin-right:50px">Neolock</h2>
+                        <a  class="navbar-brand" href="{{ url('/') }}"><h2 style="margin-top: 45px; margin-left:-150px;margin-right:1px">Neolock</h2>
                         </a>
                         <a href="{{ url('/') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Trang chủ</h5></a>
                         <a href="{{ url('/product') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Sản phẩm</h5></a>
                         <a href="{{ url('/blog') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Blog</h5></a>
                         <a href="{{ url('/contact') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Liên hệ</h5></a>
+                        <a href="{{ url('/carts/view') }}" class="navbar-brand" style="margin-top: 55px; margin-left:600px"><i class="fa fa-cart-plus"></i></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
+                        
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav me-auto">
                                 <ul class="nav navbar-top-links navbar-right">
-                                
                             </ul>
-                            
+                          
                             <!-- Right Side Of Navbar -->
 
                             <div style="margin-top: 50px" class="d-flex flex-row-reverse">
@@ -57,7 +57,7 @@
                                     @else                     
                                         <li class="nav-item dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                {{$cus->fullname}}
+                                                {{auth()->guard('customer')->user()->fullname}}
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="{{ route('logout') }}"

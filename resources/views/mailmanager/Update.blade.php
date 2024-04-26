@@ -6,7 +6,6 @@
             <form method="POST" action="{{route("mailmanager.update",['id' => $mailmanager->id])}}">
                 @method("PUT")
                 @csrf
-                {{-- {{Form::open("route" => "route("orderdetail.update",$orderdetail->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $mailmanager->id }}">
 
                 <div class="form-group">

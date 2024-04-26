@@ -14,7 +14,6 @@
             </button>
         </div>
     @endif
-
     <?php //Hiển thị thông báo lỗi?>
     @if ( Session::has('error') )
         <div class="alert alert-danger alert-dismissible" role="alert">

@@ -6,7 +6,6 @@
             <form method="POST" action="{{route("category.update",['id'=> $categorys->id])}}">
                 @method("PUT")
                 @csrf
-                {{-- {{Form::open("route" => "route("category.update",$category->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $categorys->id }}">
                 <div class="form-group">
                     <label for="customer_id">ID khách hàng</title></label><br>

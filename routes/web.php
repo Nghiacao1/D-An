@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\CartsController;
 use App\Http\Controllers\MailManagerController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
@@ -147,7 +148,10 @@ Route::get('/send-mail', [SendMailController::class, 'demomail']);
 
 Auth::routes(['verify' => true]);
 
-
-
+Route::get('carts/addcart/{id}', [CartsController::class,'addcart'])->name('cart.add');
+Route::get('/carts/view', [CartsController::class,'view'])->name('cart.view');
+Route::put('/carts/update/{id}', [CartsController::class,'update'])->name('cart.update');
+Route::DELETE('/carts/delete/{id}', [CartsController::class,'destroy'])->name('cart.destroy');
+Route::get('/carts/order', [CartsController::class, 'order'])->name('cart.order');
 
 

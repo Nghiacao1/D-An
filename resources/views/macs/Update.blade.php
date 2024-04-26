@@ -7,7 +7,6 @@
             @method("PUT")
             @csrf
             <div class="col-sm">
-                {{-- {{Form::open("route" => "route("mac.update",$mac->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $macs->id }}">
                 
                 <div class="form-group">

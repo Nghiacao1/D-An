@@ -6,7 +6,6 @@
         <div class="row">
                 @method("PUT")
                 @csrf
-                {{-- {{Form::open("route" => "route("building.update",$building->id)",'method' => 'PUT')}} --}}
                 <div class="col-sm">
                     <input type="hidden" name="id" value="{{ $customers->id }}">
                     <div class="form-group">

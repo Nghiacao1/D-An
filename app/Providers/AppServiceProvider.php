@@ -47,8 +47,9 @@ class AppServiceProvider extends ServiceProvider
         $sales21 = Orderdetail::where( DB::raw('YEAR(createdDate)'), '=', '2021' )->sum('price');
         $sales22 = Orderdetail::where( DB::raw('YEAR(createdDate)'), '=', '2022' )->sum('price');
         $sales23 = Orderdetail::where( DB::raw('YEAR(createdDate)'), '=', '2023' )->sum('price');
-
-
+        $cus = auth()->guard('customer')->user();
+        
+        View::share('cus', $cus);
         View::share('sales', $sales);
         View::share('sales18', $sales18);
         View::share('sales19', $sales19);

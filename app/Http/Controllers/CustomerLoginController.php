@@ -44,7 +44,6 @@ class CustomerLoginController extends Controller
         {
             $cus = auth()->guard('customer')->user();
             
-            view::share('cus', $cus);
             return view('/frontend.home', compact('cus'));
         }else{
             return back()->with('error','your username and password are wrong.');

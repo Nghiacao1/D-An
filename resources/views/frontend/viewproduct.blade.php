@@ -31,7 +31,7 @@
                       <span class="price">{{$products->price}} VNĐ</span>
                       <span class="old-price"></span>
                     </span>
-                    <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn btn-sub text-white" title="Mua ngay" id="add_cart" href="/gio-hang/add/khoa-cua-dien-tu-thong-minh-cao-cap-neo3s-15">MUA NGAY</a></button>
+                    <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn btn-sub text-white" title="Mua ngay" href = "/carts/addcart/{{$products->id}}">Thêm vào giỏ</a></button>
                   </div>
                 </div>
               </div>
@@ -222,7 +222,7 @@
               </div>
       
               <div class="col-12 col-lg-12 text-center" style="padding:16px;">
-                  <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn text-white" title="Mua ngay" id="add_cart" href="/gio-hang/add/khoa-cua-dien-tu-thong-minh-cao-cap-neo3s-15">MUA NGAY</a></button>
+              <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn text-white" title="Mua ngay" href = "/carts/addcart/{{$products->id}}">Thêm vào giỏ</a></button>
               </div>
       
             </div>

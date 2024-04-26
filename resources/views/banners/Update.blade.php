@@ -6,7 +6,6 @@
             <form method="POST" action="{{route("banner.update",['id' => $banners->id])}}">
                 @method("PUT")
                 @csrf
-                {{-- {{Form::open("route" => "route("banner.update",$banner->id)",'method' => 'PUT')}} --}}
                 <input type="hidden" name="id" value="{{ $banners->id }}">
                 <div class="form-group">
                     <label for="title">Title</title></label><br>
