@@ -21,15 +21,19 @@ class CartsController extends Controller
         $cartproduct = Product::findOrFail($id);
         $namepro= $cartproduct->name;
         $cus = auth()->guard('customer')->user();
-        $cart = DB::table('carts')->select('*');
-        foreach($cart as $item) {
-            $namecart = $item->name;
-            if( $namepro == $namecart){
-            $quantity = $item->quantity+1;
-            DB::table('carts')->where('name', $namecart)->update(['quantity' =>$quantity ]);
-            return back();
+        $cart = DB::table('carts')->get();
+        $name = [];
+        foreach($cart as $row) {
+            array_push($name, ($row->name));
+        }
+        if( in_array($namepro, $name) ){
+            foreach($cart as $row) {
+                $quantity = $row->quantity+1;
             }
-            else{
+            DB::table('carts')->where('name', $namepro)->update(['quantity' =>$quantity ]);
+            return back();
+        }
+        else{
             $newcart = new Cart;
             $newcart->username = $cus->username;
             $newcart->images = $cartproduct->images;
@@ -43,7 +47,7 @@ class CartsController extends Controller
             } 
             toastr()->error('Data add fail');
             return back();  
-        } }
+        } 
    
     }
       public function view()
