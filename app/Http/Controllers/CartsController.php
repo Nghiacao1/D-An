@@ -21,28 +21,29 @@ class CartsController extends Controller
         $cartproduct = Product::findOrFail($id);
         $namepro= $cartproduct->name;
         $cus = auth()->guard('customer')->user();
-        $cart = DB::table('carts')->select('*')->first();
-        $namecart = $cart->name;
-        if( $namepro == $namecart){
-        $quantity = $cart->quantity+1;
-        DB::table('carts')->where('name', $namecart)->update(['quantity' =>$quantity ]);
-        return back();
-        }
-        else{
-        $newcart = new Cart;
-        $newcart->username = $cus->username;
-        $newcart->images = $cartproduct->images;
-        $newcart->price = $cartproduct->price;
-        $newcart->name = $cartproduct->name;
-        $newcart->quantity = 1; 
-        $newcart->save();
-        if($newcart instanceof Cart) {
-            toastr()->success('Data add success');
-            return redirect()->back();
-        } 
-        toastr()->error('Data add fail');
-        return back();  
-        } 
+        $cart = DB::table('carts')->select('*');
+        foreach($cart as $item) {
+            $namecart = $item->name;
+            if( $namepro == $namecart){
+            $quantity = $item->quantity+1;
+            DB::table('carts')->where('name', $namecart)->update(['quantity' =>$quantity ]);
+            return back();
+            }
+            else{
+            $newcart = new Cart;
+            $newcart->username = $cus->username;
+            $newcart->images = $cartproduct->images;
+            $newcart->price = $cartproduct->price;
+            $newcart->name = $cartproduct->name;
+            $newcart->quantity = 1; 
+            $newcart->save();
+            if($newcart instanceof Cart) {
+                toastr()->success('Data add success');
+                return redirect()->back();
+            } 
+            toastr()->error('Data add fail');
+            return back();  
+        } }
    
     }
       public function view()
