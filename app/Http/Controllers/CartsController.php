@@ -21,16 +21,15 @@ class CartsController extends Controller
         $cartproduct = Product::findOrFail($id);
         $namepro= $cartproduct->name;
         $cus = auth()->guard('customer')->user();
-        $cart = DB::table('carts')->get();
+        $cart = DB::table('carts')->where('username', $cus->username)->get();
         $name = [];
         foreach($cart as $row) {
             array_push($name, ($row->name));
         }
         if( in_array($namepro, $name) ){
-            foreach($cart as $row) {
-                $quantity = $row->quantity+1;
-            }
-            DB::table('carts')->where('name', $namepro)->update(['quantity' =>$quantity ]);
+            $cartquantity=DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->first();
+            $quantity = $cartquantity->quantity+1;
+            DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->update(['quantity' =>$quantity ]);
             return back();
         }
         else{
