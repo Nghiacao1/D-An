@@ -21,27 +21,31 @@ class CartsController extends Controller
         $cartproduct = Product::findOrFail($id);
         $namepro= $cartproduct->name;
         $cus = auth()->guard('customer')->user();
-        $cart = DB::table('carts')->select('*')->first();
-        $namecart = optional($cart)->name;
-        if( $namepro == $namecart){
-        $quantity = $cart->quantity+1;
-        DB::table('carts')->where('name', $namecart)->update(['quantity' =>$quantity ]);
-        return back();
+        $cart = DB::table('carts')->where('username', $cus->username)->get();
+        $name = [];
+        foreach($cart as $row) {
+            array_push($name, ($row->name));
+        }
+        if( in_array($namepro, $name) ){
+            $cartquantity=DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->first();
+            $quantity = $cartquantity->quantity+1;
+            DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->update(['quantity' =>$quantity ]);
+            return back();
         }
         else{
-        $newcart = new Cart;
-        $newcart->username = $cus->username;
-        $newcart->images = $cartproduct->images;
-        $newcart->price = $cartproduct->price;
-        $newcart->name = $cartproduct->name;
-        $newcart->quantity = 1; 
-        $newcart->save();
-        if($newcart instanceof Cart) {
-            toastr()->success('Data add success');
-            return redirect()->back();
-        } 
-        toastr()->error('Data add fail');
-        return back();  
+            $newcart = new Cart;
+            $newcart->username = $cus->username;
+            $newcart->images = $cartproduct->images;
+            $newcart->price = $cartproduct->price;
+            $newcart->name = $cartproduct->name;
+            $newcart->quantity = 1; 
+            $newcart->save();
+            if($newcart instanceof Cart) {
+                toastr()->success('Data add success');
+                return redirect()->back();
+            } 
+            toastr()->error('Data add fail');
+            return back();  
         } 
    
     }
