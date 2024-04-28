@@ -7,24 +7,27 @@
                 <center><h3>Thông Tin Đặt Hàng</h3><center>
                 <div class="col-12">
                     <div class="cart-total">
-                        <form action="{{ route("category.create") }}" method="POST">
+                        <form action ="{{ route("order.add") }}" method="POST">
+                            @method("POST")
+                            @csrf
                             <div class="row">
                                 <div class="col-sm">
+                                    <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
                                     <div class="form-group">
-                                        <label for="name">Họ và Tên</label>
-                                        <input type="text" class="form-control" id="username"  name="username" placeholder="Tên khách hàng" maxlength="15" required />
+                                        <label for="fullname">Họ và Tên</label>
+                                        <input type="text" class="form-control" id="fullname"  name="fullname" placeholder="Tên khách hàng" maxlength="15" required />
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Email</label>
+                                        <label for="email">Email</label>
                                         <input type="text" class="form-control" id="email"  name="email" placeholder="Email khách hàng" maxlength="255" required />
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Địa chỉ</label>
+                                        <label for="address">Địa chỉ</label>
                                         <input type="text" class="form-control" id="address"  name="address" placeholder="Địa chỉ" maxlength="255" required />
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Số điện thoại</label>
-                                        <input type="text" class="form-control" id="phone"  name="phone" placeholder="Số điện thoại " maxlength="15" required />
+                                        <label for="phone_number">Số điện thoại</label>
+                                        <input type="text" class="form-control" id="phone_number"  name="phone_number" placeholder="Số điện thoại " maxlength="15" required />
                                     </div>
                                 </div>
                                 <div class="col-sm">

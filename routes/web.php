@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\MailManagerController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
@@ -152,6 +153,8 @@ Route::get('carts/addcart/{id}', [CartsController::class,'addcart'])->name('cart
 Route::get('/carts/view', [CartsController::class,'view'])->name('cart.view');
 Route::put('/carts/update/{id}', [CartsController::class,'update'])->name('cart.update');
 Route::DELETE('/carts/delete/{id}', [CartsController::class,'destroy'])->name('cart.destroy');
-Route::get('/carts/order', [CartsController::class, 'order'])->name('cart.order');
+
+Route::get('/orders/order', [OrdersController::class, 'order']);
+Route::post('/orders/addorder', [OrdersController::class, 'addorder'])->name('order.add');
 
 

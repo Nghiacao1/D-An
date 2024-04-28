@@ -53,7 +53,7 @@
                         </table>
                     
                         <div class="col-12 col-lg-12 text-center" style="padding:16px;">
-                                <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn text-white" title="Mua ngay" href="{{ url('/carts/order') }}">Mua hàng</a></button>
+                                <button style="background-color: #B22222"><a style="margin-top: 10px" class="btn text-white" title="Mua ngay" href="{{ url('/orders/order') }}">Mua hàng</a></button>
                             </div>
                     @endguest
                     </div>

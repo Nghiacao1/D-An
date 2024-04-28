@@ -22,7 +22,7 @@ class CartsController extends Controller
         $namepro= $cartproduct->name;
         $cus = auth()->guard('customer')->user();
         $cart = DB::table('carts')->select('*')->first();
-        $namecart = $cart->name;
+        $namecart = optional($cart)->name;
         if( $namepro == $namecart){
         $quantity = $cart->quantity+1;
         DB::table('carts')->where('name', $namecart)->update(['quantity' =>$quantity ]);
@@ -82,11 +82,4 @@ class CartsController extends Controller
         toastr()->error('Data delete fail');
         return back();
     }
-    public function order()
-    {
-        $cus = auth()->guard('customer')->user(); 
-        $username = $cus->username;
-        $viewcart = DB::table('carts')->where('username', '=', $username)->get();
-        return view('/cart.order',compact('viewcart'));
-    }    
 }
