@@ -21,7 +21,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <center><div class="card-header" ><h4>{{ __('Login your admin account') }}</h4></div></center>
+                <center><div class="card-header" ><h3>{{ __('Login your admin account') }}</h3></div></center>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -58,7 +58,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button style="width: 20rem" type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
                             </div>

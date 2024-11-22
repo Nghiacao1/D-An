@@ -113,11 +113,11 @@
                                 <div class="list-intro">
                                     <center><div class="item">
                                         <div class="d_ico">
-                                            <img style="margin-top: 10px" src={{asset('/img/icon-gradient-rank.svg')}} width="70px" height="70px">
+                                            <img style="margin-top: 10px" src={{asset('/img/camera.png')}} width="70px" height="70px">
                                         </div>
                                         <div class="name">
-                                            <h5 class="mb-0">Dẫn đầu Việt Nam</h5>
-                                            <span>Dẫn đầu xu hướng cosplay</span>
+                                            <h5 class="mb-0">Studio chuyên nghiệp</h5>
+                                            <span>Mang đến những album đẹp nhất</span>
                                         </div>
                                     </div></center>
                                 </div>

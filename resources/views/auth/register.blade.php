@@ -17,15 +17,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div >
-        <section class="vh-9">
-            <div class="container-fluid h-custom">
+        <section style="background-image:url({{asset('/img/signup.jpg')}})" class="vh-9">
+            <div class="container-fluid h-custom" style="height: 600px">
               <div class="row d-flex justify-content-center align-items-center h-100">
-                <div style="margin-left: 250px; margin-top:80px" class="col-sm ">
-                  <img width="400px" height="150px" src="https://eu-central.storage.cloudconvert.com/tasks/dd55d7de-3b7a-4276-87e7-ee5fda113700/516-lg.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241104%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20241104T065149Z&X-Amz-Expires=86400&X-Amz-Signature=04ad46980ec2d28e871ff31e9fc8578c56323929765b9f0d5d4fb206a88f091c&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22516-lg.webp%22&response-content-type=image%2Fwebp&x-id=GetObject"
-                    class="img-fluid" alt="Sample image">
+                <div style="margin-left: 250px; margin-top:80px" class="col-sm "> 
                 </div>
-                <div class="col-sm-1 col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div style="color: white" class="col-sm-1 col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                       <p class="lead fw-normal mb-0 me-3">Wellcome To My Shop</p>
                       
@@ -136,7 +133,6 @@
               <!-- Right -->
             </div>
           </section>
-    </div>
 
 
     <main class="py-4">
