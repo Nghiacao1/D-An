@@ -1,7 +1,7 @@
 @extends('layouts.appfront')
 
 @section('content')
-    <div class="form-control-1" >
+    <div class="form-control-1" style="margin-top: -30px">
         <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -18,24 +18,25 @@
                 <div style="margin-top: 15px" class="stars">
                     <div style="margin: auto" class="column">
                         <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
+                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
                         </span>
                         <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
+                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
                         </span>
                         <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
+                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
                         </span>
                         <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
+                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
                         </span>
                         <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
+                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
                         </span>
                     </div>
                 </div>
-                <a href="/product/{{$row->id}}"><div style="margin-top:40px;color: black" class="name">{{$row->name}}</div></a>
-                <div class="price">Giá {{$row->price}} VNĐ</div>
+                <a href="/product/{{$row->id}}"><div style="margin-top:20px;color: black" class="name">{{$row->name_character}}</div></a>
+                <div class="price">Giá thuê {{$row->price}} VNĐ</div>
+                <div class="price">Giá bán {{$row->sale_price}} VNĐ</div>
             </div>
             </a>
             @endforeach    

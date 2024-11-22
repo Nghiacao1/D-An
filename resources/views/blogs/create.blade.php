@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for="images_2">Images 2</label>
-                <input type="text" class="form-control" id="images_2"  name="images_2" placeholder="Images 2" maxlength="255" required />
+                <input type="text" class="form-control" id="images_2"  name="images_2" placeholder="Images 2" maxlength="500" required />
             </div>
             <div class="form-group">
                 <label for="synopsis">Synopsis</label>

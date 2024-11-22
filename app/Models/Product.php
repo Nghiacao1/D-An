@@ -20,19 +20,17 @@ class Product extends Authenticatable
     protected $fillable = [
         'id',
         'name',
-        'product_id',
+        'name_character',
         'images',
-        'introduce',
+        'images2',
+        'images3',
+        'images4',
+        'category',
         'description',
         'price',
-        'salient_features',
-        'connect',
-        'access_mode',
-        'support_system',
-        'power',
-        'lowbattery_warning',
-        'security',
-        'img_description',
+        'sale_price',
+        'size',
+        'brand'
     ];
     public $timestamps = false;
 }

@@ -14,12 +14,15 @@
             
                             <tr>
                                 <th>ID</th>
-                                <th>name</th>
-                                <th>Product id</th>
-                                <th>Images</th>
-                                <th>Introduce</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th>Tên game/anime</th>
+                                <th>Tên nhân vật</th>
+                                <th>Thương hiệu</th>
+                                <th>Hình ảnh</th>
+                                <th>Size đồ</th>
+                                <th>Danh mục</th>
+                                <th>Mô tả</th>
+                                <th>Giá thuê</th>
+                                <th>Giá bán</th>
                                 <th>Tool</th>
                             </tr>
                         </thead>
@@ -28,11 +31,14 @@
                         <tr>
                             <td>{{$row->id}}</td>
                             <td><a href="/products/{{$row->id}}">{{$row->name}}</a></td>
-                            <td>{{$row->product_id}}</td>
-                            <td>{{$row->images}}</td>
-                            <td>{{$row->introduce}}</td>
+                            <td>{{$row->name_character}}</td>
+                            <td>{{$row->brand}}</td>
+                            <td><img width="150px" height="150px" src="{{$row->images}}" alt="image"></td>
+                            <td>{{$row->size}}</td>
+                            <td>{{$row->category}}</td>
                             <td>{{$row->description}}</td>
                             <td>{{$row->price}}</td>
+                            <td>{{$row->sale_price}}</td>
                             <td><a class="btn btn-primary" href="products/edit/{{$row->id}}">Edit</a>  
                                 <form method="POST" style="display: inline-block" action="products/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
                                     @method('DELETE')

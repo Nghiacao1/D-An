@@ -52,13 +52,12 @@
                         </div>
                     </div>
                     <ul class="tags">
-                        <li><a title="smartlocker" href="/tin-tuc/tag/smartlocker">smartlocker</a></li>
-                        <li><a title=" rentalservice" href="/tin-tuc/tag/rentalservice"> rentalservice</a></li>
-                        <li><a title="neolock" href="/tin-tuc/tag/neolock">neolock</a></li>
-                        <li><a title=" lockerrental" href="/tin-tuc/tag/lockerrental"> lockerrental</a></li>
-                        <li><a title="mobileapp" href="/tin-tuc/tag/mobileapp">mobileapp</a></li>
-                        <li><a title="neolocker" href="/tin-tuc/tag/neolocker">neolocker</a></li>
-                        <li><a title="tủ cho thuê" href="/tin-tuc/tag/tu-cho-thue">tủ cho thuê</a></li>
+                        <li><a title="smartlocker" href="/tin-tuc/tag/smartlocker">Anime Fes</a></li>
+                        <li><a title=" rentalservice" href="/tin-tuc/tag/rentalservice">Hoyofest</a></li>
+                        <li><a title="neolock" href="/tin-tuc/tag/neolock">Aeon Fes</a></li>
+                        <li><a title=" lockerrental" href="/tin-tuc/tag/lockerrental"> Nippon Ơi</a></li>
+                        <li><a title="mobileapp" href="/tin-tuc/tag/mobileapp">Suzukage Fes</a></li>
+                        <li><a title="neolocker" href="/tin-tuc/tag/neolocker">Cosplay</a></li>
                       </ul>
                 </div>    
             </div>      

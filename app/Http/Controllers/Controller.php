@@ -29,8 +29,4 @@ class DatatablesController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function anyData()
-    {
-        return Datatables::of(Building::query())->make(true);
-    }
 }

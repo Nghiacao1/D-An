@@ -29,19 +29,17 @@ class ProductsController extends Controller
     {
         $newproduct = new Product;
         $newproduct->name = $request->name;
-        $newproduct->product_id = $request->product_id;
+        $newproduct->name_character = $request->name_character;
         $newproduct->images = $request->images;
-        $newproduct->introduce = $request->introduce;
+        $newproduct->images2 = $request->images2;
+        $newproduct->images3 = $request->images3;
+        $newproduct->images4 = $request->images4;
+        $newproduct->category = $request->category;
         $newproduct->description = $request->description;
         $newproduct->price = $request->price;
-        $newproduct->salient_features = $request->salient_features;
-        $newproduct->connect = $request->connect;
-        $newproduct->access_mode = $request->access_mode;
-        $newproduct->support_system = $request->support_system;
-        $newproduct->power = $request->power;
-        $newproduct->lowbattery_warning = $request->lowbattery_warning;
-        $newproduct->security = $request->security;
-        $newproduct->img_description = $request->img_description;
+        $newproduct->sale_price = $request->sale_price;
+        $newproduct->size = $request->size;
+        $newproduct->brand = $request->brand;
 
         $newproduct->save();
         if($newproduct instanceof Product) {
@@ -61,18 +59,18 @@ class ProductsController extends Controller
     {
         $products = Product::find($id);
         $products->name = $request->name;
-        $products->product_id = $request->product_id;
+        $products->name_character = $request->name_character;
         $products->images = $request->images;
-        $products->introduce = $request->introduce;
+        $products->images2 = $request->images2;
+        $products->images3 = $request->images3;
+        $products->images4 = $request->images4;
+        $products->category = $request->category;
         $products->description = $request->description;
         $products->price = $request->price;
-        $products->salient_features = $request->salient_features;
-        $products->connect = $request->connect;
-        $products->access_mode = $request->access_mode;
-        $products->support_system = $request->support_system;
-        $products->power = $request->power;
-        $products->lowbattery_warning = $request->lowbattery_warning;
-        $products->img_description = $request->img_description;
+        $products->sale_price = $request->sale_price;
+        $products->size = $request->size;
+        $products->brand = $request->brand;
+
 
 
         $products->save();
@@ -98,6 +96,23 @@ class ProductsController extends Controller
     public function viewproduct($id)
     {
         $products = Product::where('id', '=', $id)->select('*')->first();
-        return view('/frontend.viewproduct', compact('products'));
-    }    
+        $cus = [];
+        $cus = auth()->guard('customer')->user();
+        if($cus != null ){
+            $cus = $cus->username;
+        }
+        $name_char = $products->name_character;
+        $review = DB::table('reviews')->where('name_character', '=', $name_char)->get();
+        $reviewss =  DB::table('reviews')->where([['username', '=', $cus],['name_character', '=', $name_char]])->get();
+        if(empty($review)){
+            echo "Variable 'a' is empty.<br>";
+        }
+        return view('/frontend.viewproduct', compact('products','review','cus','reviewss'));
+    }
+    // public function showreview($id) {
+    //     $products = Product::where('id', '=', $id)->select('*');
+    //     $name_char = $products->name_character;
+    //     $review = DB::table('carts')->where('name_character', '=', $name_char)->get();
+    //     return view('/frontend.viewproduct', compact('review'));
+    // }    
 }

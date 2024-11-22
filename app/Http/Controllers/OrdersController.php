@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\DB;
 class OrdersController extends Controller
 {
     use AuthenticatesUsers;
+    public function index( Request $request)
+    {
+        $orders = DB::table('orders')->paginate(10);
+        $pageName = 'Tên Trang - News'; 
+
+        return view('orders.index', compact('orders', 'pageName'));
+    }
+    public function show($id)
+    {
+        $orders = Order::where('id', '=', $id)->select('*')->first();
+        return view('/orders/detail', compact('orders'));
+    } 
     public function order()
     {
         $cus = auth()->guard('customer')->user(); 
@@ -34,7 +46,7 @@ class OrdersController extends Controller
         $neworder = new Order();
         $neworder->username = $username;
         $neworder->fullname = $request->fullname;
-        $neworder->name_pro = $row->name;
+        $neworder->name_char = $row->name;
         $neworder->address = $request->address;
         $neworder->phone_number = $request->phone_number;
         $neworder->total = $total;

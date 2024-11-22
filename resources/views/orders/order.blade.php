@@ -15,7 +15,7 @@
                                     <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
                                     <div class="form-group">
                                         <label for="fullname">Họ và Tên</label>
-                                        <input type="text" class="form-control" id="fullname"  name="fullname" placeholder="Tên khách hàng" maxlength="15" required />
+                                        <input type="text" class="form-control" id="fullname"  name="fullname" placeholder="Tên khách hàng" maxlength="50" required />
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
@@ -35,10 +35,10 @@
                                     <thead>
                                         <tr>
                                             <th style="width: 80px">Hình ảnh</th>
-                                            <th>Tên sản phẩm</th>
-                                            <th>Giá</th>
+                                            <th style="width:120px">Tên sản phẩm</th>
+                                            <th style="width:100px">Giá</th>
                                             <th style="width: 80px">Số lượng</th>
-                                            <th style="width: 90px">Thành tiền</th>
+                                            <th style="width: 120px">Thành tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -46,9 +46,9 @@
                                         <tr>
                                             <td><img width="80px" height="70px" src={{$row->images}} alt=""></td>
                                             <td>{{$row->name}}</td>
-                                            <td>{{$row->price}}</td>
+                                            <td>{{$row->price}} VNĐ</td>
                                             <td>{{$row->quantity}}</td>
-                                            <td>{{$total=number_format((((float)$row->price)*($row->quantity)*1000000),0,',','.')}}</td>
+                                            <td>{{$total=number_format((((float)$row->price)*($row->quantity)*1000),0,',','.')}} VNĐ</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

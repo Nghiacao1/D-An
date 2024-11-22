@@ -10,15 +10,11 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Neo3S',     {{$lock1}}],
-          ['Neo7S',     {{$lock2}}],
-          ['Neo66',  {{$lock3}}],
-          ['NeoA6S',  {{$lock4}}],
-          ['NeoLUX3',  {{$lock5}}]
+          
         ]);
 
         var options = {
-          title: 'Loại khóa phổ biến'
+          title: 'Danh mục đồ được thuê nhiều nhất'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -33,12 +29,7 @@
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
             ['Year', 'Sales'],
-            ['2018', {{$sales18}}],
-            ['2019', {{$sales19}}],
-            ['2020', {{$sales20}}],
-            ['2021', {{$sales21}}],
-            ['2022', {{$sales22}}],
-            ['2023', {{$sales23}}]
+            
           ]);
   
           var options = {
@@ -134,22 +125,7 @@
                                 <a href="/customers"><i class="fa fa-user-circle" aria-hidden="true"></i>Quản lý khách hàng</a>
                             </li>
                             <li>
-                                <a href="/buildings"><i class="fa fa-home"></i>Quản lý tòa nhà</a>
-                            </li>
-                            <li>
-                                <a href="/category"><i class="fa fa-cubes"></i>Quản lý sản phẩm khách hàng</a>
-                            </li>
-                            <li>
-                                <a href="/agencies"><i class="fa fa-map-marker"></i>Quản lý thông tin agencies</a>
-                            </li>
-                            <li>
-                                <a href="/macs"><i class="fa fa-home"></i>Quản lý thông tin macs</a>
-                            </li>
-                            <li>
-                                <a href="/orderdetails"><i class="fa fa-sticky-note"></i>Chi tiết hóa đơn</a>
-                            </li>
-                            <li>
-                                <a href="/banners"><i class="fa fa-file-image-o"></i>Quản lý Banner</a>
+                                <a href="/orders"><i class="fa fa-sticky-note"></i>Chi tiết hóa đơn</a>
                             </li>
                             <li>
                                 <a href="/mailmanager"><i class="fa fa-envelope"></i>Quản lý Mails</a>

@@ -1,7 +1,7 @@
 @extends('layouts.appfront')
 
 @section('content')
-    <div style="margin-top: 5px" class="banner">
+    <div class="banner">
         <div class="box-right">
         </div>
         <div class="to-bottom">
@@ -10,187 +10,61 @@
             </a>
         </div>
     </div>
-    <section class="services" class="page-section colord">
-        <div class="container">
-        <div style="margin-top: 20px" class="row"> 
-            <!-- item -->
-            <div class="col-md-3 text-center"><div class="b1"> <i class="circle"><img src="images/a1.jpg" alt="" /></i>
-                <i class="fa fa-mobile fa-5x" aria-hidden="true">    
-                </i>
-            <h3>Modern</h3>
-            <p>Quản lý bằng ứng dụng điện thoại thông qua Bluetooth 4.0</p>
-            </div></div>
-            <!-- end: --> 
-            
-            <!-- item -->
-            <div class="col-md-3 text-center"><div class="b1"><i class="circle"> <img src="images/a2.jpg" alt="" /></i>
-                <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
-            <h3>Convenient</h3>
-            <p>Cấp mã PIN mở khóa từ xa theo thời gian.</p>
-            </div></div>
-            <!-- end: --> 
-            
-            <!-- item -->
-            <div class="col-md-3 text-center"><div class="b1"><i class="circle"> <img src="images/a3.jpg" alt="" /></i>
-                <i class="fa fa-shield fa-5x" aria-hidden="true"></i>
-            <h3>Security</h3>
-            <p>Tự động khoá theo thời gian định sẵn, ngừng hoạt động sau 5 lần nhập sai mật khẩu.</p>
-            </div></div>
-            <!-- end: --> 
-            
-            <!-- item -->
-            <div class="col-md-3 text-center"><div class="b1"><i class="circle"> <img src="images/a4.jpg" alt="" /></i>
-                <i class="fa fa-tasks fa-5x" aria-hidden="true"></i>
-            <h3>Multifunction</h3>
-            <p>Mở khoá ra vào và hỗ trợ vân, thẻ từ,....</p>
-            </div></div>
-            <!-- end:--> 
-        </div>
-        </div>
-        <!--/.container--> 
-    </section>
     <div class="wp-products">
         <h2>SẢN PHẨM HOT</h2>
         <ul style="margin-left: -70px" class="list-products">
             @foreach($productss as $row)
             <a href="/product/{{$row->id}}"><div class="item">
-                <img width="174px" height="174px" src={{$row->images}} alt="">
-                <div style="margin-top: 15px" class="stars">
-                    <div style="margin: auto" class="column">
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
-                        <span>
-                            <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                        </span>
+                    <img width="174px" height="174px" src={{$row->images}} alt="">
+                    <div style="margin-top: 15px" class="stars">
+                        <div style="margin: auto" class="column">
+                            <span>
+                                <a style="color:brown" class="fa fa-star" aria-hidden="true"></a>
+                            </span>
+                            <span>
+                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                            </span>
+                            <span>
+                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                            </span>
+                            <span>
+                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                            </span>
+                            <span>
+                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="name">{{$row->name}}</div>
-                <div class="price">Giá {{$row->price}} VNĐ</div>
+                    <div class="name">{{$row->name_character}}</div>
+                    <div class="price">Giá thuê {{$row->price}} VNĐ</div>
+                    <div class="sale_price">Giá bán {{$row->sale_price}} VNĐ</div>
             </div></a>
             @endforeach    
         </ul>    
     </div>
-    <div id="saleoff">
-        <div class="box-left">
-            <h1>
-                <span>GIẢM GIÁ LÊN ĐẾN</span>
-                <span>45%</span>
-            </h1>
-        </div>
-        <div class="box-right"></div>
-    </div>
-
+     <!-- SƠ LƯỢT -->
     <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 style="margin-top: 20px" id="about" class="title text-center">TÍNH NĂNG KHÓA CỬA THÔNG MINH NEOLOCK</h1>
+                    <h1 id="about" class="title text-center">SƠ LƯỢC VỀ DỊT DÀNG</h1>
                     <div class="space"></div>
-                    <div class="row">
+                    <div class="row" style="margin-top: 10px">
                         <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-mobile fa-5x" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Mở khóa cửa bằng ứng dụng di động thông qua Bluetooh hoặc mạng Wifi (Gateway).</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-bandcamp fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Tự động khoá theo thời gian đã cài đặt, ngừng hoạt động sau 5 lần nhập sai mật khẩu.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-history fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Chia sẻ quyền quản lý khóa và theo dõi lịch sử ra vào trong ứng dụng di động.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-key fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Mở khóa nhanh chóng bằng mã PIN, mã PIN thay đổi động theo thời hạn theo cơ chế OTP.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-hand-o-right fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Hỗ trợ mở khóa qua vân tay, thẻ từ, nhận diện khuôn mặt và nhiều chức năng cao cấp khác.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <img width="300" height="400" src={{asset('/img/featured-app.png')}} alt="">
-                        </div>
-                    <div class="space"></div>
-
-    <!-- giải pháp khóa locker -->
-    <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 id="about" class="title text-center">CÁC GIẢI PHÁP KHÓA TỦ LOCKER THÔNG MINH</h1>
-                    <div class="space"></div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img width="500" height="500" src={{asset('/img/tu_locker_thong_minh_neolock.jpg')}} alt="">
+                            <img width="500" height="500" src={{asset('/img/gioithieu.png')}} alt="">
                             <div class="space"></div>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled">
                                 <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
         
-                                    <div class="media">
+                                    <div class="media" style="margin-top: 20px">
                                         <div class="pull-left icon" href="#">
-                                            <i class="fa fa-plus-square fa-3x" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
 
                                         </div>
                                         <div class="media-body">
-                                            <h3 class="media-heading">Giải pháp cho thuê tủ locker thông minh qua APP.</h3>
+                                            <h3 class="media-heading">Dịt Dàng được thành lập vào cuối năm 2022!</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -199,87 +73,107 @@
         
                                     <div class="media">
                                         <div class="pull-left icon" href="#">
-                                            <i class="fa fa-quote-right fa-3x" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
 
                                         </div>
                                         <div class="media-body">
-                                            <h3 class="media-heading">Giải pháp giặt ủi thông qua tủ locker thông minh.</h3>
+                                            <h3 class="media-heading">Là đơn vị cho thuê trang phục Cosplay uy tín!</h3>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-star-half-o fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Giải pháp bán hàng, điểm trung chuyển giao nhận hàng hóa cho thương mại điện tử.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-book fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Tủ locker cho phòng tập Gym, Spa, Golf, hồ bơi, khu mua sắm.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="feature-item" style="margin:10px 0 ; padding : 8px;">
-        
-                                    <div class="media">
-                                        <div class="pull-left icon" href="#">
-                                            <i class="fa fa-caret-square-o-down fa-3x" aria-hidden="true"></i>
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h3 class="media-heading">Neolock cung cấp SDK, API cho đối tác tích hợp khóa cửa, khóa tủ locker thông minh.</h3>
-                                        </div>
-                                    </div>
-                                </div>
                             </ul>
+                            <div class="col-sm-6">
+                                <div class="list-intro">
+                                    <center><div class="item">
+                                        <div class="d_ico">
+                                            <img style="margin-top: 10px" src={{asset('/img/icon-gradient-rank.svg')}} width="70px" height="70px">
+                                        </div>
+                                        <div class="name">
+                                            <h5 class="mb-0">Dẫn đầu Việt Nam</h5>
+                                            <span>Dẫn đầu xu hướng cosplay</span>
+                                        </div>
+                                    </div></center>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="list-intro">
+                                    <center><div class="item">
+                                        <div class="d_ico">
+                                            <img style="margin-top: 10px" src={{asset('/img/icon-gradient-clothes.svg')}} width="70px" height="70px">
+                                        </div>
+                                        <div class="name">
+                                            <h5 class="mb-0">Sản phẩm đa dạng</h5>
+                                            <span>Luôn cập nhật xu hướng</span>
+                                        </div>
+                                    </div></center>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <div class="list-intro">
+                                    <center><div class="item">
+                                        <div class="d_ico">
+                                            <img style="margin-top: 10px" src={{asset('/img/icon-gradient-rank.svg')}} width="70px" height="70px">
+                                        </div>
+                                        <div class="name">
+                                            <h5 class="mb-0">Dẫn đầu Việt Nam</h5>
+                                            <span>Dẫn đầu xu hướng cosplay</span>
+                                        </div>
+                                    </div></center>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="list-intro">
+                                    <center><div class="item">
+                                        <div class="d_ico">
+                                            <img style="margin-top: 10px" src={{asset('/img/icon-gradient-laundry.svg')}} width="70px" height="70px">
+                                        </div>
+                                        <div class="name">
+                                            <h5 class="mb-0">Giặt là sạch sẽ</h5>
+                                            <span>Cung cấp dịch vụ làm sạch uy tín</span>
+                                        </div>
+                                    </div></center>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="space"></div>
+    </section>
+    <!-- DỊCH VỤ -->
 
-
-
-
-
-
-    <!-- logo đối tác -->
-
-    <section class="clients">
+    <section class="clients" style="margin-top: 30px">
         <div class="container">
-            <div class="row">
-                    <center><div style="margin-bottom: 20px" class="aligncenter"><h1 class="aligncenter">ĐỐI TÁC</h1>Các đối tác doanh nghiệp bất động sản và cổng thanh toán</div></center>
+            <center><div class="row">
+                    <center><div style="margin-bottom: 20px" class="aligncenter"><h1 class="aligncenter">NHỮNG DỊCH VỤ CỦA DỊT DÀNG</h1></div></center>
                     <br/>
                     </div>
                     <div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
-                        <img width="300" height="auto" src={{asset('/img/imgclient1.png')}}>
+                        <i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>
+                        <h3>CHỤP ẢNH</h3>
+                        <h4>Giá cả chỉ 2.990K/Người</h4>
+                        <a>Note: Giá đã bao gồm mọi chi phí</a>
                     </div>
                     <div class="col-md-3 col-sm-12 col-xs-12">
-                        <img width="300" height="auto" src={{asset('/img/fecredit_logo.png')}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="70px" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0l12.6 0c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7 480 448c0 35.3-28.7 64-64 64l-192 0c-35.3 0-64-28.7-64-64l0-250.3-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0l12.6 0z"/></svg>
+                        <h3>THUÊ ĐỒ</h3>
+                        <h4>Trang phục đẹp, giá cả hợp lý</h4>
+                        <a>Note: Giá thuê mỗi bộ sẽ khác nhau</a>
                     </div>
                     <div class="col-md-3 col-sm-12 col-xs-12">
-                        <img width="300" height="auto" src={{asset('/img/logo-neo-BG.png')}}>
+                        <img width="80" height="70" src={{asset('/img/makeup.png')}}>
+                        <h3>TRANG ĐIỂM</h3>
+                        <h4>Makeup Artist chuyên nghiệp</h4>
+                        <a>Note: Giá make tùy mỗi nhân vật</a>
                     </div>
                     <div class="col-md-3 col-sm-12 col-xs-12">
-                        <img width="200" height="auto" src={{asset('/img/Note2Collect-logo-Negative-black.png')}}>
+                        <img width="80" height="70" src={{asset('/img/washing-machine.png')}}>
+                        <h3>GIẶT, DƯỠNG</h3>
+                        <h4>Chăm sóc trang phục của bạn</h4>
+                        <a>Note: Giá cả tùy theo trang phục</a>
                     </div>
-            </div>
+            </div></center>
         </div>
-    </section>
     <div class="container">
         <div class="row">
             <center><div style="margin-bottom: 20px; margin-top:20px" class="aligncenter"><h1 class="aligncenter">TIN TỨC VÀ SỰ KIỆN</h1>Những tin tức và sự kiện mới nhất</div></center>

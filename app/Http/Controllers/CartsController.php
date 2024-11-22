@@ -19,15 +19,19 @@ class CartsController extends Controller
     public function addcart(Request $request, $id)
     {
         $cartproduct = Product::findOrFail($id);
-        $namepro= $cartproduct->name;
+        $namepro= $cartproduct->name_character;
         $cus = auth()->guard('customer')->user();
         $cart = DB::table('carts')->where('username', $cus->username)->get();
+        $price = $cartproduct->price;
         $name = [];
+        $sale = [];
         foreach($cart as $row) {
             array_push($name, ($row->name));
+            array_push($sale, ($row->price));
         }
-        if( in_array($namepro, $name) ){
-            $cartquantity=DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->first();
+        if( in_array($namepro, $name) && in_array($price, $sale)){
+           
+            $cartquantity=DB::table('carts')->where([['name', $namepro],['username', $cus->username],['price', $cartproduct->   price]])->first();
             $quantity = $cartquantity->quantity+1;
             DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->update(['quantity' =>$quantity ]);
             return back();
@@ -37,7 +41,43 @@ class CartsController extends Controller
             $newcart->username = $cus->username;
             $newcart->images = $cartproduct->images;
             $newcart->price = $cartproduct->price;
-            $newcart->name = $cartproduct->name;
+            $newcart->name = $cartproduct->name_character;
+            $newcart->quantity = 1;
+            $newcart->save();
+            if($newcart instanceof Cart) {
+                toastr()->success('Data add success');
+                return redirect()->back();
+            } 
+            toastr()->error('Data add fail');
+            return back();  
+        } 
+   
+    }
+    public function addcartsale(Request $request, $id)
+    {
+        $cartproduct = Product::findOrFail($id);
+        $namepro= $cartproduct->name_character;
+        $cus = auth()->guard('customer')->user();
+        $cart = DB::table('carts')->where('username', $cus->username)->get();
+        $sale_price = $cartproduct->sale_price;
+        $name = [];
+        $sale = [];
+        foreach($cart as $row) {
+            array_push($name, ($row->name));
+            array_push($sale, ($row->price));
+        }
+        if( in_array($namepro, $name) && in_array($sale_price, $sale) ){
+            $cartquantity=DB::table('carts')->where([['name', $namepro],['username', $cus->username]])->first();
+            $quantity = $cartquantity->quantity+1;
+            DB::table('carts')->where('name', $namepro)->where('username', $cus->username)->update(['quantity' =>$quantity ]);
+            return back();
+        }
+        else{
+            $newcart = new Cart;
+            $newcart->username = $cus->username;
+            $newcart->images = $cartproduct->images;
+            $newcart->price = $cartproduct->sale_price;
+            $newcart->name = $cartproduct->name_character;
             $newcart->quantity = 1; 
             $newcart->save();
             if($newcart instanceof Cart) {
