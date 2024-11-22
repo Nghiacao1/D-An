@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {   
         $productss = DB::table('products')->paginate(8);
-        $productsShow = DB::table('products')->paginate(12);
+        $productsShow = DB::table('products')->paginate(20);
         $cuscount = Customer::count();
         $customers = DB::table('customers')->paginate(10);
         $blogss= DB::table('blogs')->paginate(6);
