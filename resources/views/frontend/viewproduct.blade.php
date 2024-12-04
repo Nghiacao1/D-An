@@ -329,7 +329,7 @@
                     <div style="display: inline-block">
                         <h4 style="text-transform: none;margin-top:15px">Đánh giá của khách hàng</h4>
                             <div class="col-md-9">
-                                <p><img width="20" height="20" alt="hinhanh" src="{{ Avatar::create($row->username)->toBase64() }}">{{$row->username}}</p>
+                                <p><img width="20" height="20" alt="hinhanh" src="{{Avatar::create($row->username)->toBase64() }}">{{$row->username}}</p>
                                 <img src={{$row->images}} width="150px" height="150px">
                                 <p>@for ($i = 1;$i<= $row->star; $i++)
                                     <a style="color:brown" class="fa fa-star " aria-hidden="true"></a>
@@ -343,7 +343,7 @@
                         <h4 style="text-transform: none;margin-top:15px">Đánh giá của khách hàng</h4>
                         @foreach ($review as $row)
                                     <div class="col-md-9">
-                                        <p><img width="20" height="20" alt="hinhanh" src="{{ Avatar::create($row->username)->toBase64() }}">{{$row->username}}</p>
+                                        <p><img width="20" height="20" alt="hinhanh" src="{{Avatar::create($row->username)}}">{{$row->username}}</p>
                                         <img src={{$row->images}} width="150px" height="150px">
                                         <p>@for ($i = 1;$i<= $row->star; $i++)
                                             <a style="color:brown" class="fa fa-star " aria-hidden="true"></a>
