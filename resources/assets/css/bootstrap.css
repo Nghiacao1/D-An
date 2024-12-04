@@ -6564,7 +6564,7 @@ button.close {
 .list-intro .item {
     width: 250px;
     height: 150px;
-    background:#285e8e;
+    background:black;
     border-radius: 10px;
     margin-bottom: 50px;
 }
