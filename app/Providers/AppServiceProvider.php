@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Customer;
 use App\Models\Building;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -35,14 +36,22 @@ class AppServiceProvider extends ServiceProvider
         $blogss= DB::table('blogs')->paginate(6);
         
         $cus = auth()->guard('customer')->user();
-        
-        
+        $ordercount = Order::count();
+        $order = DB::table('orders')->get();
+        $total = 0;
+        foreach($order as $orders){
+            $total += $orders->Total;
+        }
+
         View::share('cus', $cus);
 
         View::share('productsShow', $productsShow);
         View::share('productss', $productss);
         View::share('blogss',$blogss);    
         View::share('customers', $customers);
-        View::share('cuscount',$cuscount); 
+        View::share('cuscount', $cuscount);
+        View::share('total', $total);
+        View::share('ordercount', $ordercount);
+        
     }
 }

@@ -45,10 +45,10 @@
                                         @foreach($viewcart as $row)
                                         <tr>
                                             <td><img width="80px" height="70px" src={{$row->images}} alt=""></td>
-                                            <td>{{$row->name}}</td>
-                                            <td>{{$row->price}} VNĐ</td>
+                                            <td>{{$row->name_char}}</td>
+                                            <td>{{number_format($row->price,0,",",".")}} VNĐ</td>
                                             <td>{{$row->quantity}}</td>
-                                            <td>{{$total=number_format((((float)$row->price)*($row->quantity)*1000),0,',','.')}} VNĐ</td>
+                                            <td>{{number_format($total=$row->price*$row->quantity,0,",",".")}} VNĐ</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

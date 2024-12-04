@@ -95,7 +95,7 @@
                 </div>
                 <center style="margin-top: 100px"><h4 style="color: white">Long time no see!!!</h4></center>
             </div>
-            <div style="margin-top: 200px"
+            <div style="margin-top: 200px;background-color: black !important"
               class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
               <!-- Copyright -->
               <div class="text-white mb-3 mb-md-0">

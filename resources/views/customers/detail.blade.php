@@ -2,22 +2,15 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-header"><h2> Detail Customer: {{$customers->fullname}} </h2></div>
+    <div style="background-color: white" class="card-header"><h2><a style="background-color: white; border: none" class="btn btn-primary" href="/customers"><i style="color: green" class="fa fa-angle-double-left fa-3x" aria-hidden="true"></i></a> Thông tin chi tiết: {{$customers->fullname}} </h2></div>
         <div class="panel-body-1">
-            <div id="buildings-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="customers-table"></label></div>
-            <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/customers">Về danh sách</a></p>
-                <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
-                    
-                    <img width="150" height="150" alt="hinhanh" src="{{ Avatar::create($customers->fullname)->toBase64() }}">
-                    
+                <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">                
                     <ul class="col-sm-22">
                         <div class="container-1">
                             <div class="row">
                               <label class="col">User Name:</label>
                               <div class="col">{{$customers->username}}</div>
                               <div class="w-100"></div>
-                              <label class="col">Neolock Username:</label>
-                              <div class="col">{{$customers->neolock_username}}</div>
                               <div class="w-100"></div>
                               <label class="col">Email:</label>
                               <div class="col">{{$customers->email}}</div>

@@ -72,6 +72,7 @@ Route::put('/banners/update/{id}', [BannersController::class,'update'])->name('b
 Route::get('banners/edit/{id}', [BannersController::class,'edit']);
 Route::DELETE('/banners/delete/{id}', [BannersController::class,'destroy']);
 Route::get('/banners/{id}', [BannersController::class,'show']);
+
 //agencies//
 Route::get('/agencies', [AgenciesController::class, 'index']);
 Route::get('agencies/create', [AgenciesController::class,'create']); 
@@ -125,6 +126,9 @@ Route::DELETE('/carts/delete/{id}', [CartsController::class,'destroy'])->name('c
 Route::get('/orders', [OrdersController::class, 'index']);
 Route::get('/orders/order', [OrdersController::class, 'order']);
 Route::post('/orders/addorder', [OrdersController::class, 'addorder'])->name('order.add');
+Route::put('/orders/update/{id}', [OrdersController::class,'update'])->name('order.update');
+Route::get('/orders/{id}', [OrdersController::class,'show']);
+Route::DELETE('/orders/delete/{id}', [OrdersController::class,'destroy'])->name('order.destroy');
 
 
 Route::get('/info',function(){

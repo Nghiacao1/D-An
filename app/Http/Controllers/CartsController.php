@@ -41,7 +41,9 @@ class CartsController extends Controller
             $newcart->username = $cus->username;
             $newcart->images = $cartproduct->images;
             $newcart->price = $cartproduct->price;
-            $newcart->name = $cartproduct->name_character;
+            $newcart->name = $cartproduct->name;
+            $newcart->name_char = $cartproduct->name_character;
+            $newcart->category = $cartproduct->category;
             $newcart->quantity = 1;
             $newcart->save();
             if($newcart instanceof Cart) {
@@ -77,7 +79,9 @@ class CartsController extends Controller
             $newcart->username = $cus->username;
             $newcart->images = $cartproduct->images;
             $newcart->price = $cartproduct->sale_price;
-            $newcart->name = $cartproduct->name_character;
+            $newcart->name = $cartproduct->name;
+            $newcart->name_char = $cartproduct->name_character;
+            $newcart->category = $cartproduct->category;
             $newcart->quantity = 1; 
             $newcart->save();
             if($newcart instanceof Cart) {

@@ -7,7 +7,7 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CustomersController extends Controller
+class customersController extends Controller
 {
     public function index(customersDataTable $dataTable, Request $request)
     {
@@ -29,22 +29,17 @@ class CustomersController extends Controller
     public function store(Request $request)
     {
         $newcus = new Customer;
-        $newcus->code = $request->code;
         $newcus->fullname = $request->fullname;
         $newcus->email = $request->email;
         $newcus->password = $request->password;
         $newcus->username = $request->username;
-        $newcus->neolock_username = $request->neolock_username;
         $newcus->phone = $request->phone;
         $newcus->address = $request->address;
         $newcus->country = $request->country;
         $newcus->district = $request->district;
         $newcus->city = $request->city;
         $newcus->avatar = $request->avatar;
-        $newcus->balance = $request->balance;
-        $newcus->roles = $request->roles;
         $newcus->CCCD = $request->CCCD;
-        $newcus->product_type = $request->product_type;
 
         $newcus->save();
         if($newcus instanceof Customer) {
@@ -63,22 +58,17 @@ class CustomersController extends Controller
     public function update(Request $request, $id)
     {
         $customers = Customer::find($id);
-       $customers->code = $request->code;
        $customers->fullname = $request->fullname;
        $customers->email = $request->email;
        $customers->password = $request->password;
        $customers->username = $request->username;
-       $customers->neolock_username = $request->neolock_username;
        $customers->phone = $request->phone;
        $customers->address = $request->address;
        $customers->country = $request->country;
        $customers->district = $request->district;
        $customers->city = $request->city;
        $customers->avatar = $request->avatar;
-       $customers->balance = $request->balance;
-       $customers->roles = $request->roles;
        $customers->CCCD = $request->CCCD;
-       $customers->product_type = $request->product_type;
         $customers->save();
         if($customers instanceof Customer) {
             toastr()->success('Data update success');

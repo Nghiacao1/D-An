@@ -18,7 +18,7 @@ class OrdersController extends Controller
     public function show($id)
     {
         $orders = Order::where('id', '=', $id)->select('*')->first();
-        return view('/orders/detail', compact('orders'));
+        return view('/orders/vieworder', compact('orders'));
     } 
     public function order()
     {
@@ -42,15 +42,19 @@ class OrdersController extends Controller
         $username = $cus->username;
         $viewcart = DB::table('carts')->where('username', '=', $username)->get();
         foreach($viewcart as $row){
-        $total=number_format((((float)$row->price)*($row->quantity)*1000000),0,',','.');
+        $total=number_format($row->price *$row->quantity,0,",",".");
+
         $neworder = new Order();
         $neworder->username = $username;
         $neworder->fullname = $request->fullname;
-        $neworder->name_char = $row->name;
+        $neworder ->name_char = $row->name_char;
+        $neworder->name = $row->name;
+        $neworder->category = $row->category;
         $neworder->address = $request->address;
         $neworder->phone_number = $request->phone_number;
         $neworder->total = $total;
         $neworder->quantity = $row->quantity;
+        $neworder->trangthai = 1;
         $neworder->save();
         }
         if($neworder instanceof Order) {
@@ -62,5 +66,30 @@ class OrdersController extends Controller
         } 
         toastr()->error('Data add fail');
         return back();   
+    }
+    public function update(Request $request, $id)
+    {
+        $order = Order::find($id);
+        $order->trangthai = $request->trangthai;
+
+        $order->save();
+        if($order instanceof Order) {
+            toastr()->success('Data update success');
+            return redirect('orders');
+        } 
+        toastr()->error('Data update fail');
+        return back();
+    }
+    public function destroy($id)
+    {
+        $orders = Order::find($id);
+
+        $orders->delete();
+        if($orders instanceof Order) {
+            toastr()->success('Data delete success');
+            return redirect('/orders');
+        } 
+        toastr()->error('Data delete fail');
+        return back();
     }
 }

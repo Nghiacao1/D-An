@@ -103,11 +103,22 @@ class ProductsController extends Controller
         }
         $name_char = $products->name_character;
         $review = DB::table('reviews')->where('name_character', '=', $name_char)->get();
+        $num= count($review);
+        $star = 0;
+        foreach ($review as $key => $value) {
+            $star +=$value->star;
+        }
+        if ($num == 0){
+            $totalstar = $star/1;
+        }
+        else{
+            $totalstar = $star/$num;
+        }
         $reviewss =  DB::table('reviews')->where([['username', '=', $cus],['name_character', '=', $name_char]])->get();
         if(empty($review)){
             echo "Variable 'a' is empty.<br>";
         }
-        return view('/frontend.viewproduct', compact('products','review','cus','reviewss'));
+        return view('/frontend.viewproduct', compact('products','review','cus','reviewss','totalstar','num'));
     }
     // public function showreview($id) {
     //     $products = Product::where('id', '=', $id)->select('*');

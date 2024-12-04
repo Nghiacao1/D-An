@@ -24,7 +24,7 @@
                 </div>
                 <div style="color: white" class="col-sm-1 col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                      <p class="lead fw-normal mb-0 me-3">Wellcome To My Shop</p>
+                      <p style="font-size: 30px;color: black" class="lead fw-normal mb-0 me-3">Xin chào bạn mới</p>
                       
                     </div>
           
@@ -35,8 +35,8 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}"/>
-                        <div class="row mb-3">
-                            <label for="fullname" class="col-md-3 col-form-label text-md-end">{{ __('Fullname') }}</label>
+                        <div style="color: black" class="row mb-3">
+                            <label for="fullname" class="col-md-3 col-form-label text-md-end">{{ __('Họ và Tên') }}</label>
 
                             <div class="col-md-6">
                                 <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ old('fullname') }}" required autocomplete="fullname" autofocus>
@@ -49,8 +49,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="username" class="col-md-3 col-form-label text-md-end">{{ __('User Name') }}</label>
+                        <div style="color: black" class="row mb-3">
+                            <label for="username" class="col-md-3 col-form-label text-md-end">{{ __('Tên tài khoản') }}</label>
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
@@ -62,8 +62,8 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-3 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div style="color: black" class="row mb-3">
+                            <label for="email" class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -76,8 +76,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-3 col-form-label text-md-end">{{ __('Password') }}</label>
+                        <div style="color: black" class="row mb-3">
+                            <label for="password" class="col-md-3 col-form-label text-md-end">{{ __('Mật khẩu') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -90,8 +90,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-3 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                        <div style="color: black" class="row mb-3">
+                            <label for="password-confirm" class="col-md-3 col-form-label text-md-end">{{ __('Xác nhận mật khẩu') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -101,8 +101,8 @@
                 </div>
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-7">
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Register') }}
+                        <button style="width: 20rem" type="submit" class="btn btn-primary">
+                            {{ __('Đăng ký') }}
                         </button>
                     </div>
                 </div>    
@@ -110,7 +110,7 @@
                 </div>
               </div>
             </div>
-            <div style="margin-top: 150px"
+            <div style="margin-top: 150px; background-color: black !important"
               class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
               <!-- Copyright -->
               <div class="text-white mb-3 mb-md-0">

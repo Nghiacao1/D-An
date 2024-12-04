@@ -56,13 +56,12 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:customers'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'username'=> ['required', 'string','max:255'],
-            'neolock_username'=> ['required', 'string','max:255'],
-            'CCCD'=> ['required', 'string','max:10'],
-            'phone'=>['required', 'string','max:10'],
-            'address'=> ['required', 'string','max:255'],
-            'district'=> ['required', 'string','max:255'],
-            'city'=> ['required', 'string','max:255'],
-            'country'=> ['required', 'string','max:255'],
+            // 'CCCD'=> ['required', 'string','max:10'],
+            // 'phone'=>['required', 'string','max:10'],
+            // 'address'=> ['required', 'string','max:255'],
+            // 'district'=> ['required', 'string','max:255'],
+            // 'city'=> ['required', 'string','max:255'],
+            // 'country'=> ['required', 'string','max:255'],
         ]);
     }
 
@@ -80,13 +79,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'username'=> $data['username'],
-            'neolock_username'=> $data['neolock_username'],
-            'CCCD'=> $data['CCCD'],
-            'phone'=> $data['phone'],
-            'address'=> $data['address'],
-            'district'=> $data['district'],
-            'city'=> $data['city'],
-            'country'=> $data['country'],
+            // 'CCCD'=> $data['CCCD'],
+            // 'phone'=> $data['phone'],
+            // 'address'=> $data['address'],
+            // 'district'=> $data['district'],
+            // 'city'=> $data['city'],
+            // 'country'=> $data['country'],
         ]);
     }
 }

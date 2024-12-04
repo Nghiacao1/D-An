@@ -30,10 +30,12 @@
             <div class="panel panel-primary text-center no-boder bg-color-blue">
                 <div class="panel-body">
                     <i class="fa fa-shopping-cart fa-5x"></i>
-                    <h3> </h3>
+                    <h3> 
+                        {{$ordercount}}
+                    </h3>
                 </div>
                 <div class="panel-footer back-footer-blue">
-                    Số lượng đồ đã bán
+                    Số lượng đơn hàng
 
                 </div>
             </div>
@@ -53,7 +55,7 @@
             <div class="panel panel-primary text-center no-boder bg-color-brown">
                 <div class="panel-body">
                     <i class="fa fa-money fa-5x"></i>
-                    <h3>  VNĐ</h3>
+                    <h3> {{number_format($total,0,",",".")}} VNĐ</h3>
                 </div>
                 <div class="panel-footer back-footer-brown">
                     Thu nhập    
@@ -137,7 +139,7 @@
                                     <th>Full Name</th>
                                     <th>Email</th>
                                     <th>User Name</th>
-                                    <th>Neolock UserName</th>
+    
                                 </tr>
                             </thead>
                             <tbody>
@@ -147,7 +149,7 @@
                                         <td><a href="/customers/{{$row->id}}">{{$row->fullname}}</a></td>
                                         <td>{{$row->email}}</td>
                                         <td>{{$row->username}}</td>
-                                        <td>{{$row->neolock_username}}</td>
+                                    
                                     </tr>
                                 @endforeach
                             </tbody>

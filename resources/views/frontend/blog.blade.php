@@ -3,7 +3,7 @@
 @section('content')
     <!-- perfect -->
     <div class="container">
-        <h1>Bài viết của Neolock</h1>
+        <h1>Tin tức và sự kiện</h1>
         <div style="margin-top: 30px" class="row">
             <div class="col-sm-8">
                 @foreach($blogss as $row) 
