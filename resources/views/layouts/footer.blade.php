@@ -13,11 +13,10 @@
                 <p><i class="fa fa-phone-square me-3"></i>0902 978 999</p>
                 <p><i class="fa fa-envelope me-3"></i>info@ditdang.vn</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-primary me-1" href="https://twitter.com/?lang=vi"><i class="fa fa-twitch fa-2x"></i></a>
-                    <a class="btn btn-square btn-outline-primary me-1" href="https://www.facebook.com/neolock.vn"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a class="btn btn-square btn-outline-primary me-1" href="https://www.instagram.com/neolock.vn/"><i class="fa fa-instagram fa-2x"></i></a>
-                    <a class="btn btn-square btn-outline-primary me-1" href=""><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href="https://twitter.com/?lang=vi"><i style="color: orange" class="fa fa-twitch fa-2x"></i></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href="https://www.facebook.com/neolock.vn"><i style="color: orange" class="fa fa-facebook fa-2x"></i></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href="https://www.instagram.com/neolock.vn/"><i style="color: orange" class="fa fa-instagram fa-2x"></i></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href=""><i  style="color: orange" class="fa fa-youtube-play fa-2x"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">

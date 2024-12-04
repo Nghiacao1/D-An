@@ -113,4 +113,4 @@
     @stack('scripts')
 </body>
 </html>
-@extends('footer')
+@extends('layouts.footer')

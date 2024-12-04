@@ -34,11 +34,12 @@
                             <td>{{$row->type}}</td>
                             <td>{{$row->datas}}</td>
                             <td>{{$row->cateid}}</td>
-                            <td><a class="btn btn-primary" href="banners/edit/{{$row->id}}">Edit</a>  
+                            <td><a href="/banners/{{$row->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                <a class="btn btn-primary" href="banners/edit/{{$row->id}}"><i class="fa fa-pencil"></i></a>  
                                 <form method="POST" style="display: inline-block" action="banners/delete/{{$row->id}}" onsubmit="return ConfirmDelete( this )">
                                     @method('DELETE')
                                     @csrf
-                                        <button class="btn btn-primary" type="submit">Delete</button>
+                                        <button class="btn btn-primary" type="submit"><i class="fa fa-trash fa-2x"></i></button>
                             </form></td>
                         </tr>
                         @endforeach

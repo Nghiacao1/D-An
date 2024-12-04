@@ -32,25 +32,25 @@
                     <div style="margin-top: 15px" class="stars">
                         <div style="margin: auto" class="column">
                             <span>
-                                <a style="color:brown" class="fa fa-star" aria-hidden="true"></a>
+                                <a style="color:yellow" class="fa fa-star" aria-hidden="true"></a>
                             </span>
                             <span>
-                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
                             </span>
                             <span>
-                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
                             </span>
                             <span>
-                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
                             </span>
                             <span>
-                                <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
                             </span>
                         </div>
                     </div>
                     <div class="name">{{$row->name_character}}</div>
-                    <div class="price">Giá thuê {{$row->price}} VNĐ</div>
-                    <div class="sale_price">Giá bán {{$row->sale_price}} VNĐ</div>
+                    <div class="price">Giá thuê {{number_format($row->price,0,",",'.')}} VNĐ</div>
+                    <div class="sale_price">Giá bán {{number_format($row->sale_price,0,',','.')}} VNĐ</div>
             </div></a>
             @endforeach    
         </ul>    

@@ -69,9 +69,9 @@
                 <div class="card-header" ><h4>{{ __('Đơn hàng của bạn') }}</h4></div>
 
                 <div class="card-body">
+                @foreach ($order as $row)
                     <div class="col-sm-6">
                         <div class="list-intro">
-                            @foreach ($order as $row)
                                     <center><div style="height: auto; color: black; background-color:aliceblue" class="item">
                                         <p> Mã đơn hàng</p>
                                         <a style="color: blue">{{$row->id}}</a>
@@ -80,11 +80,13 @@
                                         <p style="margin-top: -15px"> Thành tiền</p>
                                         <a style="color: blue">{{$row->Total}} VNĐ</a>
                                         <p style="margin-top: -15px"> Trạng thái</p>
-                                        <a style="color: blue"></a>
+                                        @if ($row->trangthai == 1)
+                                            <a style="color: blue"> Đang xác nhận</a>
+                                        @endif
                                 </div></center>
-                            @endforeach   
                         </div>
                     </div>
+                    @endforeach   
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ use App\Models\Review;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Helpers\UploadFile as Upload;
 
 class ReviewsController extends Controller
 {
@@ -26,18 +27,18 @@ class ReviewsController extends Controller
         $reviewproduct = Product::findOrFail($id);
         $name_char= $reviewproduct->name_character;
         $cus = auth()->guard('customer')->user();
-        $review = DB::table('reviews')->where('username', $cus->username)->get();
         $name = [];
-        foreach($review as $row) {
-            array_push($name, ($row->name_character));
-        }
-        $newreview = new Review;
-        $newreview->username = $cus->username;
-        $newreview->name_character = $name_char;
-        $newreview->star = $request->star;
-        $newreview->images = $request->images;
-        $newreview->description = $request->description; 
-        $newreview->save();
+        $newreview = Review::create([
+        'username' => $cus->username,
+        'name_character' => $name_char,
+        'star' => $request->star,
+        'description' => $request->description
+        ]);
+        $request->validate([
+            'images' => ['required', 'image']
+        ]);
+    
+        $path = $request->file('images')->store('public/anh_danh_gia');
         if($newreview instanceof Review) {
             toastr()->success('Đánh giá thành công');
             return redirect()->back();

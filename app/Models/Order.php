@@ -28,6 +28,7 @@ class Order extends Authenticatable
         'phone_number',
         'total',
         'quantity',
+        'trangthai'
     ];
     public $timestamps = false;
 }

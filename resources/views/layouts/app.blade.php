@@ -62,9 +62,9 @@
 <body>
     <div id="wrapper">
             <div id="app">
-                <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+                <nav style="height: 100px" class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
-                        <a  class="navbar-brand" href="{{ url('/home') }}"><h2> Neotech</h2>
+                        <a  class="navbar-brand" href="{{ url('/home') }}"><h2><img src="{{asset('img/ditdang-footer.png')}}"></h2>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
@@ -153,4 +153,4 @@
     @stack('scripts')
 </body>
 </html>
-@extends('footerbackend')
+@extends('layouts.footerbackend')

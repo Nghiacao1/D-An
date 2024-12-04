@@ -41,11 +41,13 @@
                     </div>
                 </div>
                 <a href="/product/{{$row->id}}"><div style="margin-top:20px;color: black" class="name">{{$row->name_character}}</div></a>
-                <div class="price">Giá thuê {{$row->price}} VNĐ</div>
-                <div class="price">Giá bán {{$row->sale_price}} VNĐ</div>
+                <div class="price">Giá thuê {{number_format($row->price,0,",",".")}} VNĐ</div>
+                <div class="price">Giá bán {{number_format($row->sale_price,0,",",".")}} VNĐ</div>
             </div>
             </a>
             @endforeach    
-        </ul>    
+        </ul>  
+        <nav style="margin-right: 600px" aria-label="Page navigation example">
+            {{ $productsShow->links() }}
     </div>
 @endsection

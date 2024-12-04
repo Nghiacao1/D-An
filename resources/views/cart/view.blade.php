@@ -33,8 +33,8 @@
                                 @foreach($viewcart as $row)
                                 <tr>
                                     <td><img width="150px" height="150px" src={{$row->images}} alt=""></td>
-                                    <td>{{$row->name}}</td>
-                                    <td>{{$row->price}}</td>
+                                    <td>{{$row->name_char}}</td>
+                                    <td>{{$row->price}} VNĐ</td>
                                     <form method="POST" action="{{route("cart.update",['id' => $row->id])}}">
                                         @method("PUT")
                                         @csrf

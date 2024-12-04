@@ -22,6 +22,8 @@ class Cart extends Authenticatable
         'username',
         'images',
         'name',
+        'name_char',
+        'category',
         'price',
         'quantity'
     ];

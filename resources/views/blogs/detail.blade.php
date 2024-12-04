@@ -2,32 +2,25 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-header"><h2> Detail Blogs: {{$blogs->title}} </h2></div>
+    <div style="background-color: white" class="card-header"><h2><a style="background-color: white; border: none" class="btn btn-primary" href="/blogs"><i style="color: green" class="fa fa-angle-double-left fa-3x" aria-hidden="true"></i></a> Thông tin bài viết: {{$blogs->title}} </h2></div>
         <div class="panel-body-1">
-            <div id="banners-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control-2 form-control-sm" placeholder="" aria-controls="banners-table"></label></div>
-            <p class="d-flex flex-row-reverse"><a class="btn btn-primary" href="/blogs">Về danh sách</a></p>
                 <div class="box_oldproduct box_oldproductV2"  style="display: flex;margin-top: 20px">   
                     
                     <img width="150" height="150" alt="hinhanh" src={{$blogs->images}}>
                     
-                    <ul class="col-sm-8">
+                    <ul  style="margin-left: 20px" class="col-sm-8">
                         <div class="container-1">
                             <div class="row">
-                              <label class="col">Content:</label>
-                              <div class="col-sm-8">{{$blogs->content}}</div>
-                              <div class="w-100"></div>
+                                <label style="flex: 0.2 0 0" class="col">Mô tả</label>
+                                <textarea  style="height: 60px;white-space: nowrap;overflow: hidden;" class="col-sm-8">{{$blogs->synopsis}}</textarea>
+                                <div class="w-100" style="margin-top: 20px"></div>
+                                <label style="flex: 0.2 0 0" class="col">Nội dung:</label>
+                                <textarea style="height: 100px;white-space: nowrap;overflow: hidden;" class="col-sm-8">{{$blogs->content}}</textarea>
+                                <div class="w-100"></div>
                           </div>
                         </div>
                     </ul>
-                    <ul class="col-sm-4">
-                        <div class="container-1">
-                            <div class="row">
-                              <label class="col">External Link:</label>
-                              <div class="col">{{$blogs->external_link}}</div>
-                              <div class="w-100"></div>
-                          </div>
-                        </div>
-                    </ul>
+                    
 
                 </div>
 
