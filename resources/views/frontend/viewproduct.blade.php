@@ -281,19 +281,19 @@
                     <div class="col-sm-6">
                         <div class="rate-list">
                             <div class="timeline-star">
-                                <a class="timing" style="width: 28%"></a>
+                                <a class="timing" style="width: {{$five}}%"></a>
                             </div>
                             <div class="timeline-star" style="margin-top: 15px">
-                                <a class="timing" style="width: 8%"></a>
+                                <a class="timing" style="width: {{$four}}%"></a>
                             </div>
                             <div class="timeline-star" style="margin-top: 15px">
-                                <a class="timing" style="width: 22%"></a>
+                                <a class="timing" style="width: {{$three}}%"></a>
                             </div>
                             <div class="timeline-star" style="margin-top: 15px">
-                                <a class="timing" style="width: 8%"></a>
+                                <a class="timing" style="width: {{$two}}%"></a>
                             </div>
                             <div class="timeline-star" style="margin-top: 15px">
-                                <a class="timing" style="width: 34%"></a>
+                                <a class="timing" style="width: {{$one}}%"></a>
                             </div>
                         </div>
                     </div>

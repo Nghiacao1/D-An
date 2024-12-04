@@ -148,6 +148,11 @@ Route::get('/info',function(){
 Route::get('/changeinfo',function(){
     return view('/frontend.thongtin.capnhatthongtin');
 });
+Route::get('/changepass',function(){
+    return view('/frontend.thongtin.doipass');
+});
 Route::get('/info', [InfosController::class, 'index']);
 Route::get('/info/edit/{id}', [InfosController::class, 'edit']);
 Route::put('/info/changeinfo/{id}', [InfosController::class,'changeinfo'])->name('info.changeinfo');
+Route::get('/info/editpass/{id}', [InfosController::class, 'editpass']);
+Route::put('/info/changepass/{id}', [InfosController::class,'changepass'])->name('info.changepass');

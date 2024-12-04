@@ -108,6 +108,28 @@ class ProductsController extends Controller
         $name_char = $products->name_character;
         $review = DB::table('reviews')->where('name_character', '=', $name_char)->get();
         $num= count($review);
+        $five=0;
+        $four=0;
+        $three=0;
+        $two = 0;
+        $one = 0;
+        foreach ($review as $key => $value) {
+            if ($value->star == 5){
+                $five +=1;
+            }
+            elseif($value->star == 4){
+                $four +=1;
+            }
+            elseif($value->star == 3){
+                $three +=1;
+            }
+            elseif($value->star == 2){
+                $two +=1;
+            }
+            elseif($value->star == 1){
+                $one +=1;
+            }
+        }
         $star = 0;
         foreach ($review as $key => $value) {
             $star +=$value->star;
@@ -117,22 +139,30 @@ class ProductsController extends Controller
         }
         else{
             $totalstar = $star/$num;
+            $five = $five*100/$num;
+            $four = $four*100/$num;
+            $three = $three*100/$num;
+            $two = $two*100/$num;
+            $one = $one*100/$num;
         }
         $reviewss =  DB::table('reviews')->where([['username', '=', $cus],['name_character', '=', $name_char]])->get();
         if(empty($review)){
             echo "Variable 'a' is empty.<br>";
         }
-        return view('/frontend.viewproduct', compact('products','review','cus','reviewss','totalstar','num'));
+        return view('/frontend.viewproduct', compact('products','review','cus','reviewss','totalstar','num','five','four','three','two','one'));
     }
     public function search(Request $req)
     {
-
-
-        $sanpham = Product::where('name_character', 'like', '%' . $req->key . '%')
-            ->orWhere('name', 'like', '%' . $req->key . '%')
-            ->orWhere('category', 'like', '%' . $req->key . '%')    
-            ->paginate(20);
-        $timkiem = $req->key;
+        if($req->key == null){
+            $sanpham = DB::table('products')->paginate(20);
+        }
+        else{
+            $sanpham = Product::where('name_character', 'like', '%' . $req->key . '%')
+                ->orWhere('name', 'like', '%' . $req->key . '%')
+                ->orWhere('category', 'like', '%' . $req->key . '%')    
+                ->paginate(20);
+            $timkiem = $req->key;
+        }
         // if (isset($_GET['sort_by'])) {
         //     $sort_by = $_GET['sort_by'];
 

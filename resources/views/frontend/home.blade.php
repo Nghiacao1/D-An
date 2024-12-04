@@ -24,39 +24,41 @@
         </div>
     </div> --}}
     <div class="wp-products">
-        <h2>SẢN PHẨM HOT</h2>
-        <ul style="margin-left: -70px" class="list-products">
-            @foreach($productss as $row)
-            <a href="/product/{{$row->id}}"><div class="item">
-                    <img width="174px" height="174px" src={{$row->images}} alt="">
-                    <div style="margin-top: 15px" class="stars">
-                        <div style="margin: auto" class="column">
-                            <span>
-                                <a style="color:yellow" class="fa fa-star" aria-hidden="true"></a>
-                            </span>
-                            <span>
-                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                            </span>
-                            <span>
-                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                            </span>
-                            <span>
-                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                            </span>
-                            <span>
-                                <a style="color: yellow" class="fa fa-star" aria-hidden="true"></a>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="name">{{$row->name_character}}</div>
-                    <div class="price">Giá thuê {{number_format($row->price,0,",",'.')}} VNĐ</div>
-                    <div class="sale_price">Giá bán {{number_format($row->sale_price,0,',','.')}} VNĐ</div>
-            </div></a>
-            @endforeach    
-        </ul>    
-    </div>
+            <h2>SẢN PHẨM HOT</h2>
+            <ul style="margin-left: 30px" class="list-products">
+                @foreach($productss as $row)
+                        <a href="/product/{{$row->id}}">
+                            <div style="margin-bottom: 150px" style="background-color:black" class="item">
+                                <img style="border-radius: 10px;" width="290px" height="300px" src={{$row->images}} alt="">
+                                <div style="margin-top: 15px" class="stars">
+                                    <div style="margin: auto" class="column">
+                                        <span>
+                                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                        </span>
+                                        <span>
+                                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                        </span>
+                                        <span>
+                                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                        </span>
+                                        <span>
+                                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                        </span>
+                                        <span>
+                                            <a style="color: brown" class="fa fa-star" aria-hidden="true"></a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="/product/{{$row->id}}"><div style="margin-top:20px;color: black" class="name">{{$row->name_character}}</div></a>
+                                <div class="price">Giá thuê {{number_format($row->price,0,",",".")}} VNĐ</div>
+                                <div class="price">Giá bán {{number_format($row->sale_price,0,",",".")}} VNĐ</div>
+                            </div>
+                        </a>
+                @endforeach    
+            </ul>  
+        </div>
      <!-- SƠ LƯỢT -->
-    <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
+    <section style="margin-top: -150px" class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -191,7 +193,7 @@
         <div class="row">
             <center><div style="margin-bottom: 20px; margin-top:20px" class="aligncenter"><h1 class="aligncenter">TIN TỨC VÀ SỰ KIỆN</h1>Những tin tức và sự kiện mới nhất</div></center>
             @foreach($blogss as $row)
-                <div class="col-md-4 col-sm-12 col-xs-12">
+                <div style="margin-top: 10px" class="col-md-4 col-sm-12 col-xs-12">
                     <div class="project">
                         <figure class="img-responsive">
                             <a href="/blog/{{$row->id}}"><img width="400" height="300" src={{$row->images}} alt=""></a>

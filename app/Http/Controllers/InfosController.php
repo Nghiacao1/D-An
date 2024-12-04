@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
+use Laravel\Prompts\alert;
+use Hash;
 class InfosController extends Controller
 {
     public function index( Request $request)
@@ -41,5 +43,35 @@ class InfosController extends Controller
          } 
          toastr()->error('Data update fail');
          return back();
+    }
+    public function editpass($id){
+        $customer = Customer::findOrFail($id);
+        $pageName = 'Customers - Update';
+        return view('/frontend.thongtin.doipass', compact('customer', 'pageName'));
+    }
+    public function changepass(Request $request){
+        $cus = auth()->guard('customer')->user();
+        $customer = Customer::find($cus->id);
+        $pass = $request->Password;
+        if(Hash::check($pass,$customer->password))
+            { 
+                if($request->Repassword == $request->Newpassword && $request->Password != $request->Newpassword)
+                {
+                    $customer->password = Hash::make($request->Newpassword);
+                    $customer->save();
+                     toastr()->success('Đổi mật khẩu thành công!');
+                     return redirect('/info');
+                }
+                elseif($request->Password == $request->Newpassword)
+                {
+                     toastr()->error('Mật khẩu mới phải khác với mật khẩu cũ!');
+                }
+                else
+                 toastr()->error('Nhập lại không trùng khớp');
+           }
+        else
+             toastr()->error('Mật khẩu không chính xác!');
+        return back();
+         
     }
 }

@@ -116,14 +116,13 @@
                     <div class="sidebar-collapse">
                         <ul class="nav" id="main-menu">
                             <li>
-                                <a href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-right: 30lix"></i>Tổng quan tài khoản</a>
+                                <a href="/info"><i class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-right: 30lix"></i>Tổng quan tài khoản</a>
                             </li>
                             <li>
-
                                 <a href="/info/edit/{{auth()->guard('customer')->user()->id}}"><i class="fa fa-file-text fa-2x" style="margin-right: 35lix"></i>Thông tin cá nhân</a>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-unlock-alt fa-2x" style="margin-right: 38lix"></i> Mật khẩu và bảo mật</a>
+                                <a href="/info/editpass/{{auth()->guard('customer')->user()->id}}"><i class="fa fa-unlock-alt fa-2x" style="margin-right: 38lix"></i> Mật khẩu và bảo mật</a>
                             </li>
                             <li>
                                 <a href=""><i class="fa fa-file-text fa-2x" style="margin-right: 35lix" ></i>Đơn hàng của bạn</a> 
