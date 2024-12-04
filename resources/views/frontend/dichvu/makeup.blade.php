@@ -62,7 +62,7 @@
                     <div class="sidebar-box search-form-wrap">
                         <form action="/" class="search-form">
                           <div class="form-group">
-                            <span style="right: 20px; top: 3.8%; position: absolute" class="icon fa fa-search"></span>
+                            <span style="right: 20px; top: 1.5%; position: absolute" class="icon fa fa-search"></span>
                             <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Tìm kiếm từ khóa...">
                           </div>
                         </form>
