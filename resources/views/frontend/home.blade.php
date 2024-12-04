@@ -1,15 +1,28 @@
 @extends('layouts.appfront')
 
 @section('content')
-    <div class="banner">
-        <div class="box-right">
+    <center><div style="margin-top: -20px" id="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide"><img src={{asset('/img/banner0.png')}}></div>
+            <div class="slide"><img src={{asset('/img/banner2.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner3.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner7.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner4.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner5.jpeg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner6.png')}}></div>
+            <div class="slide"><img src={{asset('/img/banner8.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner9.jpg')}}></div>
+            <div class="slide"><img src={{asset('/img/banner10.jpg')}}></div>
         </div>
-        <div class="to-bottom">
+      </div>
+    </div></center>
+  
+        {{-- <div class="to-bottom">
             <a href="">
                 <img src={{asset('/img/to_bottom.png')}} alt="">
             </a>
         </div>
-    </div>
+    </div> --}}
     <div class="wp-products">
         <h2>SẢN PHẨM HOT</h2>
         <ul style="margin-left: -70px" class="list-products">
