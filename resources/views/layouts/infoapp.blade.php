@@ -23,7 +23,7 @@
             <div id="app">
                 <nav class="navbar-2 navbar-expand-md navbar-light bg-light shadow-sm">
                     <div class="container">
-                        <a class="navbar-brand" href="{{ url('/') }}"><img style="margin-top: 45px; margin-left:-180px;margin-right:1px" alt="Khoá cửa thông minh Neolock" src={{asset('img/ditdang-footer.png')}}>
+                        <a class="navbar-brand" href="{{ url('/') }}"><img style="margin-top: 45px; margin-left:-180px;margin-right:1px" alt="" src={{asset('img/ditdang-footer.png')}}>
                         <a href="{{ url('/') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Trang chủ</h5></a>
                         <a href="{{ url('/product') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Sản phẩm</h5></a>
                         <a href="{{ url('/blog') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Blog</h5></a>
@@ -86,16 +86,16 @@
                     <div class="sidebar-collapse">
                         <ul class="nav" id="main-menu">
                             <li>
-                                <a href="/customers"><i class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-right: 30lix"></i>Tổng quan tài khoản</a>
+                                <a href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-right: 30lix"></i>Tổng quan tài khoản</a>
                             </li>
                             <li>
-                                <a href="/orders"><i class="fa fa-file-text fa-2x" style="margin-right: 35lix"></i>Thông tin cá nhân</a>
+                                <a href=""><i class="fa fa-file-text fa-2x" style="margin-right: 35lix"></i>Thông tin cá nhân</a>
                             </li>
                             <li>
-                                <a href="/mailmanager"><i class="fa fa-unlock-alt fa-2x" style="margin-right: 38lix"></i> Mật khẩu và bảo mật</a>
+                                <a href=""><i class="fa fa-unlock-alt fa-2x" style="margin-right: 38lix"></i> Mật khẩu và bảo mật</a>
                             </li>
                             <li>
-                                <a href="/blogs"><i class="fa fa-file-text fa-2x" style="margin-right: 35lix" ></i>Đơn hàng của bạn</a> 
+                                <a href=""><i class="fa fa-file-text fa-2x" style="margin-right: 35lix" ></i>Đơn hàng của bạn</a> 
                             </li>    
 
                         </ul>
