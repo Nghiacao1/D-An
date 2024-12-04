@@ -52,6 +52,15 @@ Route::get('/homefront',function(){
 Route::get('/about',function(){
     return view('about');
 });
+Route::get('/makeup',function(){
+    return view('frontend.dichvu.makeup');
+});
+Route::get('/chupanh',function(){
+    return view('frontend.dichvu.chupanh');
+});
+Route::get('/giat',function(){
+    return view('frontend.dichvu.giat');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes(); 

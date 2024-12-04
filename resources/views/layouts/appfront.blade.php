@@ -25,9 +25,27 @@
                         <a class="navbar-brand" href="{{ url('/') }}"><img style="margin-top: 45px; margin-left:-180px;margin-right:1px" alt="Khoá cửa thông minh Neolock" src={{asset('img/ditdang-footer.png')}}>
                         <a href="{{ url('/') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Trang chủ</h5></a>
                         <a href="{{ url('/product') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Sản phẩm</h5></a>
-                        <a href="{{ url('/blog') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Blog</h5></a>
+                        <ul style="margin-top: 57px; float: left"  class="navbar-nav ms-auto"  >    
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Dịch vụ
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('/makeup') }}">
+                                        {{ __('Dịch vụ trang điểm') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('/chupanh') }}">
+                                        {{ __('Dịch vụ chụp ảnh') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('/giat') }}">
+                                        {{ __('Dịch vụ giặt dưỡng') }}
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="{{ url('/blog') }}" class="navbar-brand" style="margin-top: 50px;" ><h5>Blog</h5></a>
                         <a href="{{ url('/contact') }}" class="navbar-brand" style="margin-top: 50px; margin-left:-10px" ><h5>Liên hệ</h5></a>
-                        <a href="{{ url('/carts/view') }}" class="navbar-brand" style="margin-top: 50px; margin-left:600px"><i class="fa fa-cart-plus"></i></a>
+                        <a href="{{ url('/carts/view') }}" class="navbar-brand" style="margin-top: 50px; margin-left:500px"><i class="fa fa-cart-plus"></i></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
