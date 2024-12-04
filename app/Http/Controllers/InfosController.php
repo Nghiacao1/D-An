@@ -16,8 +16,15 @@ class InfosController extends Controller
         $order = DB::table('orders')->where('username', '=',$username)->get();
         return view('/frontend.thongtin.info', compact('cus', 'order'));
     }
-    public function changeinfo( Request $request, $id){
-        $customer = Customer::find($id);
+    public function edit($id)
+    {
+        $customer = Customer::findOrFail($id);
+        $pageName = 'Customers - Update';
+        return view('/frontend.thongtin.capnhatthongtin', compact('customer', 'pageName'));
+    }
+    public function changeinfo( Request $request){
+        $cus = auth()->guard('customer')->user();
+        $customer = Customer::find($cus->id);
         $customer->fullname = $request->fullname;
         $customer->username = $request->username;
         $customer->phone = $request->phone;

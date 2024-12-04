@@ -145,5 +145,9 @@ Route::DELETE('/orders/delete/{id}', [OrdersController::class,'destroy'])->name(
 Route::get('/info',function(){
     return view('/frontend.thongtin.info');
 });
+Route::get('/changeinfo',function(){
+    return view('/frontend.thongtin.capnhatthongtin');
+});
 Route::get('/info', [InfosController::class, 'index']);
+Route::get('/info/edit/{id}', [InfosController::class, 'edit']);
 Route::put('/info/changeinfo/{id}', [InfosController::class,'changeinfo'])->name('info.changeinfo');
