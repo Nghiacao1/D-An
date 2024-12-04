@@ -24,7 +24,7 @@
                             <label style="margin-top: 15px;" for="email" class="col-md-4 col-form-label text-md-end">{{ __('Họ và Tên') }}</label>
 
                             <div class="col-md-6">
-                                <p>{{$cus->fullname}}</p>
+                                <input placeholder={{$cus->fullname}}p>
 
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <label style="margin-top: 15px;" for="email" class="col-md-4 col-form-label text-md-end">{{ __('Số điện thoại') }}</label>
 
                             <div class="col-md-6">
-                                <p>{{$cus->phone}}</p>
+                                <input placeholder={{$cus->phone}}>
 
                             </div>
                         </div>
