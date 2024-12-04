@@ -17,6 +17,10 @@
   </div>
 </div></center>
     <div class="wp-products">
+        @if($timkiem == null)
+        @else
+            <center><h3 style="margin-bottom: 20px">Kết quả tìm kiếm: {{$timkiem}}</h3></center>
+        @endif
         <ul style="margin-left: 30px" class="list-products">
             @foreach($sanpham as $row)
                     <a href="/product/{{$row->id}}">

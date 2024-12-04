@@ -153,6 +153,7 @@ class ProductsController extends Controller
     }
     public function search(Request $req)
     {
+        $timkiem = [];
         if($req->key == null){
             $sanpham = DB::table('products')->paginate(20);
         }
@@ -205,7 +206,7 @@ class ProductsController extends Controller
         //         $sanpham = Product::where('gia', '>', 2000000)->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
         //     }
         // }
-        return view('/frontend.product', compact('sanpham'));
+        return view('/frontend.product', compact('sanpham','timkiem'));
     }
 
     // public function showreview($id) {
