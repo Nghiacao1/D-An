@@ -109,6 +109,7 @@ Route::get('/blogs/{id}', [BlogsController::class,'show']);
 Route::get('/blog/{id}', [BlogsController::class,'viewblog']);
 // //product//
 Route::get('/products', [productsController::class, 'index']);
+Route::get('/product', [productsController::class, 'showsanpham']);
 Route::get('products/create', [productsController::class,'create']); 
 Route::post('products/store', [productsController::class,'store'])->name("product.create");
 Route::put('/products/update/{id}', [productsController::class,'update'])->name('product.update');
@@ -116,6 +117,7 @@ Route::get('products/edit/{id}', [productsController::class,'edit']);
 Route::DELETE('/products/delete/{id}', [productsController::class,'destroy']);
 Route::get('/products/{id}', [productsController::class,'show']);
 Route::get('/product/{id}', [productsController::class,'viewproduct']);
+Route::get('/product', [ProductsController::class,'search'])->name('search');
 
 //review//
 Route::get('reviews/addreview/{id}', [ReviewsController::class,'addreview'])->name('review.add');

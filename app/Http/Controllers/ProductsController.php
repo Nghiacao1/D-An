@@ -15,6 +15,10 @@ class ProductsController extends Controller
 
         return view('products.index', compact('products', 'pageName'));
     }
+    public function showsanpham(){
+        $sanpham = DB::table('products')->paginate(20);
+        return view('/frontend.product', compact('sanpham'));
+    }
     public function show($id)
     {
         $products = Product::where('id', '=', $id)->select('*')->first();
@@ -120,6 +124,60 @@ class ProductsController extends Controller
         }
         return view('/frontend.viewproduct', compact('products','review','cus','reviewss','totalstar','num'));
     }
+    public function search(Request $req)
+    {
+
+
+        $sanpham = Product::where('name_character', 'like', '%' . $req->key . '%')
+            ->orWhere('name', 'like', '%' . $req->key . '%')
+            ->orWhere('category', 'like', '%' . $req->key . '%')    
+            ->paginate(20);
+        $timkiem = $req->key;
+        // if (isset($_GET['sort_by'])) {
+        //     $sort_by = $_GET['sort_by'];
+
+        //     if ($sort_by == 'tang-dan') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($sort_by == 'giam-dan') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('gia', 'DESC')->paginate(12);
+        //     } elseif ($sort_by == 'moi-cu') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('created_at', 'DESC')->paginate(12);
+        //     } elseif ($sort_by == 'cu-moi') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('created_at', 'ASC')->paginate(12);
+        //     } elseif ($sort_by == 'A-Z') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('ten_sp', 'ASC')->paginate(12);
+        //     } elseif ($sort_by == 'Z-A') {
+        //         $sanpham = Product::where('tinh_trang', '0')->orderby('ten_sp', 'DESC')->paginate(12);
+        //     }
+        // }
+
+        // if (isset($_GET['price'])) {
+        //     $price = $_GET['price'];
+
+        //     if ($price == '1') {
+        //         $sanpham = Product::where('gia', '<', 300000)->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //         $sanpham = Product::where('ten_sp', 'like', '%' . $req->key . '%')
+        //             ->orWhere('gia', $req->key)
+        //             ->paginate(12);
+        //     } elseif ($price == '2') {
+        //         $sanpham = Product::whereBetween('gia', [300000, 500000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '3') {
+        //         $sanpham = Product::whereBetween('gia', [500000, 700000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '4') {
+        //         $sanpham = Product::whereBetween('gia', [700000, 1000000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '5') {
+        //         $sanpham = Product::whereBetween('gia', [1000000, 1200000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '6') {
+        //         $sanpham = Product::whereBetween('gia', [1200000, 1500000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '7') {
+        //         $sanpham = Product::whereBetween('gia', [1500000, 2000000])->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     } elseif ($price == '8') {
+        //         $sanpham = Product::where('gia', '>', 2000000)->where('tinh_trang', '0')->orderby('gia', 'ASC')->paginate(12);
+        //     }
+        // }
+        return view('/frontend.product', compact('sanpham'));
+    }
+
     // public function showreview($id) {
     //     $products = Product::where('id', '=', $id)->select('*');
     //     $name_char = $products->name_character;

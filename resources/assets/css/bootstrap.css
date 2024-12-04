@@ -6393,6 +6393,43 @@ button.close {
   border-right: 3px solid var(--bs-dark);
 }
 
+/* body {
+  padding: 2%;
+  text-align: center;
+} */
+
+#slideshow {
+  overflow: hidden;
+  height: 650px;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 14000px;
+  -webkit-animation: slide 90s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 650px;
+  width: 1400px;
+}
+
+
+@-webkit-keyframes slide {
+  10% {margin-left: 0px;}
+  20% {margin-left: -1400px;}
+  30% {margin-left: -2800px;}
+  40% {margin-left: -4200px;}
+  50% {margin-left: -5600px;}
+  60% {margin-left: -7000px;}
+  70% {margin-left: -8400px;}
+  80% {margin-left: -9800px;}
+  90% {margin-left: -11200px;}
+  100% {margin-left: -12600px;}
+}
+
 .footer .footer-menu a:last-child {
   margin-right: 0;
   padding-right: 0;

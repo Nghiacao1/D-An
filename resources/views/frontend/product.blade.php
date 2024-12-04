@@ -1,18 +1,24 @@
 @extends('layouts.appfront')
 
 @section('content')
-    <div class="form-control-1" style="margin-top: -30px">
-        <div class="container">
-        <div class="row same-height justify-content-center">
-            <div class="col-md-12 col-lg-10">
-            <div class="post-entry text-center"></div>
-            </div>
-        </div>
-        </div>
+<center><div style="margin-top: -20px" id="slideshow">
+    <div class="slide-wrapper">
+        <div class="slide"><img src={{asset('/img/banner0.png')}}></div>
+        <div class="slide"><img src={{asset('/img/banner2.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner3.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner7.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner4.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner5.jpeg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner6.png')}}></div>
+        <div class="slide"><img src={{asset('/img/banner8.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner9.jpg')}}></div>
+        <div class="slide"><img src={{asset('/img/banner10.jpg')}}></div>
     </div>
+  </div>
+</div></center>
     <div class="wp-products">
         <ul style="margin-left: -70px" class="list-products">
-            @foreach($productsShow as $row)
+            @foreach($sanpham as $row)
             <a href="/product/{{$row->id}}"><div style="margin-bottom: 150px" style="background-color:black" class="item">
                 <img width="290px" height="300px" src={{$row->images}} alt="">
                 <div style="margin-top: 15px" class="stars">
