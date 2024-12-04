@@ -57,7 +57,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href="{{ url('/carts/view') }}" class="navbar-brand" style="margin-top: 80px; margin-left: 130px"><i class="fa fa-cart-plus"></i></a>
+                        <a href="{{ url('/carts/view') }}" class="navbar-brand" style="margin-top: 75px; margin-left: 100px"><i class="fa fa-cart-plus"></i></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
